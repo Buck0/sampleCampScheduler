@@ -4,4 +4,11 @@ class StaticPagesController < ApplicationController
 
   def help
   end
+  
+  def admin
+    if !logged_in?
+      redirect_to login_path
+      flash[:danger] = 'Please Login to use Admin Functions'
+    end
+  end
 end

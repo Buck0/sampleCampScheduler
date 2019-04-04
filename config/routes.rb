@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/help', to: 'static_pages#help'
   
+  get '/admin', to: 'static_pages#admin'
+  
   root 'static_pages#home'
   
   get    '/new',     to: 'users#new'
