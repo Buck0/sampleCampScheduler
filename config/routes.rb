@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'campers/new'
+
   get 'sessions/new'
 
   #get 'static_pages/home'
@@ -7,7 +9,11 @@ Rails.application.routes.draw do
   
   get '/admin', to: 'static_pages#admin'
   
-  root 'static_pages#home'
+  root 'static_pages#admin'
+  
+  get '/campers', to: 'campers#new'
+  
+  #root 'static_pages#home'
   
   get    '/new',     to: 'users#new'
   post   '/new',     to: 'users#create'
