@@ -11,5 +11,10 @@ class CampersControllerTest < ActionDispatch::IntegrationTest
     get campers_url
     assert_response :success
   end
+  
+  test "should redirect if not logged in" do
+    get campers_url
+    assert_redirected_to login_path
+  end
 
 end
