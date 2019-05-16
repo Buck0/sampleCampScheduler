@@ -95,3 +95,20 @@ input {
     color: $state-danger-text;
   }
 }
+
+/* Campers index */
+
+.campers {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+/* Schedule css */
+.blank {
+  display: none;
+}

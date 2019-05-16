@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'campers/new'
+  #get 'campers/new'
 
-  get 'sessions/new'
+  #get 'sessions/new'
 
   #get 'static_pages/home'
 
@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   #root 'static_pages#admin'
   
   get '/campers', to: 'campers#new'
+  post '/campers', to: 'campers#create'
+  get '/campers/all', to: 'campers#index'
+  get '/schedule', to: 'campers#schedule'
   
   root 'static_pages#home'
   
@@ -23,6 +26,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   
   resources :users
+  resources :campers
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

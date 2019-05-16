@@ -1,0 +1,91 @@
+<h1><%= @camper.name %>'s Activities</h1>
+
+<% if @camper.archery != nil && @camper.archery != "" %>
+<h3><%= @camper.archery %> &nbsp; &nbsp;&nbsp;&nbsp;Archery</h3>
+<% end %>
+
+<% if @camper.riflery != nil && @camper.riflery != "" %>
+<h3><%= @camper.riflery %> &nbsp; &nbsp;&nbsp;&nbsp;Riflery</h3>
+<% end %>
+
+<% if @camper.canoeing != nil && @camper.canoeing != "" %>
+<h3><%= @camper.canoeing %> &nbsp; &nbsp;&nbsp;&nbsp;Canoeing</h3>
+<% end %>
+
+<% if @camper.dance != nil && @camper.dance != "" %>
+<h3><%= @camper.dance %> &nbsp; &nbsp;&nbsp;&nbsp;Dance</h3>
+<% end %>
+
+<% if @camper.drama != nil && @camper.drama != "" %>
+<h3><%= @camper.drama %> &nbsp; &nbsp;&nbsp;&nbsp;Drama</h3>
+<% end %>
+
+<% if @camper.puppets != nil && @camper.puppets != "" %>
+<h3><%= @camper.puppets %> &nbsp; &nbsp;&nbsp;&nbsp;Puppets</h3>
+<% end %>
+
+<% if @camper.choir != nil && @camper.choir != "" %>
+<h3><%= @camper.choir %> &nbsp; &nbsp;&nbsp;&nbsp;Choir</h3>
+<% end %>
+
+<% if @camper.whackers != nil && @camper.whackers != "" %>
+<h3><%= @camper.whackers %> &nbsp; &nbsp;&nbsp;&nbsp;Whackers</h3>
+<% end %>
+
+<% if @camper.ropes != nil && @camper.ropes != "" %>
+<h3><%= @camper.ropes %> &nbsp; &nbsp;&nbsp;&nbsp;Ropes</h3>
+<% end %>
+
+<% if @camper.camping != nil && @camper.camping != "" %>
+<h3><%= @camper.camping %> &nbsp; &nbsp;&nbsp;&nbsp;Camping</h3>
+<% end %>
+
+<% if @camper.baking != nil && @camper.baking != "" %>
+<h3><%= @camper.baking %> &nbsp; &nbsp;&nbsp;&nbsp;Baking</h3>
+<% end %>
+
+<% if @camper.crafts != nil && @camper.crafts != "" %>
+<h3><%= @camper.crafts %> &nbsp; &nbsp;&nbsp;&nbsp;Crafts</h3>
+<% end %>
+
+<% if @camper.games != nil && @camper.games != "" %>
+<h3><%= @camper.games %> &nbsp; &nbsp;&nbsp;&nbsp;Games</h3>
+<% end %>
+
+<% if @camper.guitars != nil && @camper.guitars != "" %>
+<h3><%= @camper.guitars %> &nbsp; &nbsp;&nbsp;&nbsp;Guitars</h3>
+<% end %>
+
+<% if @camper.hiking != nil && @camper.hiking != "" %>
+<h3><%= @camper.hiking %> &nbsp; &nbsp;&nbsp;&nbsp;Hiking</h3>
+<% end %>
+
+<% if @camper.nature != nil && @camper.nature != "" %>
+<h3><%= @camper.nature %> &nbsp; &nbsp;&nbsp;&nbsp;Nature</h3>
+<% end %>
+
+<% if @camper.pottery != nil && @camper.pottery != "" %>
+<h3><%= @camper.pottery %> &nbsp; &nbsp;&nbsp;&nbsp;Pottery</h3>
+<% end %>
+
+<% if @camper.sewing != nil && @camper.sewing != "" %>
+<h3><%= @camper.sewing %> &nbsp; &nbsp;&nbsp;&nbsp;Sewing</h3>
+<% end %>
+
+<% if @camper.sign != nil && @camper.sign != "" %>
+<h3><%= @camper.sign %> &nbsp; &nbsp;&nbsp;&nbsp;Sign</h3>
+<% end %>
+
+<% if @camper.spanish != nil && @camper.spanish != "" %>
+<h3><%= @camper.spanish %> &nbsp; &nbsp;&nbsp;&nbsp;Spanish</h3>
+<% end %>
+
+<% if @camper.writing != nil && @camper.writing != "" %>
+<h3><%= @camper.writing %> &nbsp; &nbsp;&nbsp;&nbsp;Writing</h3>
+<% end %>
+
+<% if @camper.percussion != nil && @camper.percussion != "" %>
+<h3><%= @camper.percussion %> &nbsp; &nbsp;&nbsp;&nbsp;Percussion</h3>
+<% end %>
+
+<%= link_to "Edit", edit_camper_path(@camper), class: "btn btn-primary" %>

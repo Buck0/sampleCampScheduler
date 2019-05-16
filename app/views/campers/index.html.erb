@@ -1,0 +1,13 @@
+<% provide(:title, 'All Campers') %>
+<h1>All Campers</h1>
+
+<%= will_paginate %>
+<ul class="campers">
+  <% @campers.each do |camper| %>
+    <li>
+      <%= link_to camper.name, camper %> &nbsp; | &nbsp; 
+      <%= link_to "Edit", edit_camper_path(camper) %>
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate %>

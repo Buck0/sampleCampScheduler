@@ -1,0 +1,352 @@
+<% provide(:title, 'Schedule') %>
+<h1>Schedule</h1>
+
+<%= will_paginate @archery %>
+<div>Archery</div>
+<ul class="campers">
+  <% @archery.each do |archery| %>
+    <% if archery.archery != nil && archery.archery != "" %>
+    <li>
+      <%= archery.name %> &nbsp; | &nbsp; 
+      <%= archery.archery %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @archery, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Riflery</div>
+<%= will_paginate @riflery, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @riflery.each do |riflery| %>
+    <% if riflery.riflery != nil && riflery.riflery != "" %>
+    <li>
+      <%= riflery.name %> &nbsp; | &nbsp; 
+      <%= riflery.riflery %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @riflery, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Canoeing</div>
+<%= will_paginate @canoeing, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @canoeing.each do |canoeing| %>
+    <% if canoeing.canoeing != nil && canoeing.canoeing != "" %>
+    <li>
+      <%= canoeing.name %> &nbsp; | &nbsp; 
+      <%= canoeing.canoeing %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @canoeing, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Dance</div>
+<%= will_paginate @dance, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @dance.each do |dance| %>
+    <% if dance.dance != nil && dance.dance != "" %>
+    <li>
+      <%= dance.name %> &nbsp; | &nbsp; 
+      <%= dance.dance %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @dance, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Drama</div>
+<%= will_paginate @drama, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @drama.each do |drama| %>
+    <% if drama.drama != nil && drama.drama != "" %>
+    <li>
+      <%= drama.name %> &nbsp; | &nbsp; 
+      <%= drama.drama %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @drama, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Puppets</div>
+<%= will_paginate @puppets, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @puppets.each do |puppets| %>
+    <% if puppets.puppets != nil && puppets.puppets != "" %>
+    <li>
+      <%= puppets.name %> &nbsp; | &nbsp; 
+      <%= puppets.puppets %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @puppets, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Choir</div>
+<%= will_paginate @choir, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @choir.each do |choir| %>
+    <% if choir.choir != nil && choir.choir != "" %>
+    <li>
+      <%= choir.name %> &nbsp; | &nbsp; 
+      <%= choir.choir %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @choir, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Whackers</div>
+<%= will_paginate @whackers, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @whackers.each do |whackers| %>
+    <% if whackers.whackers != nil && whackers.whackers != "" %>
+    <li>
+      <%= whackers.name %> &nbsp; | &nbsp; 
+      <%= whackers.whackers %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @whackers, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Ropes</div>
+<%= will_paginate @ropes, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @ropes.each do |ropes| %>
+    <% if ropes.ropes != nil && ropes.ropes != "" %>
+    <li>
+      <%= ropes.name %> &nbsp; | &nbsp; 
+      <%= ropes.ropes %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @ropes, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Camping</div>
+<%= will_paginate @camping, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @camping.each do |camping| %>
+    <% if camping.camping != nil && camping.camping != "" %>
+    <li>
+      <%= camping.name %> &nbsp; | &nbsp; 
+      <%= camping.camping %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @camping, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Baking</div>
+<%= will_paginate @baking, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @baking.each do |baking| %>
+    <% if baking.baking != nil && baking.baking != "" %>
+    <li>
+      <%= baking.name %> &nbsp; | &nbsp; 
+      <%= baking.baking %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @baking, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Crafts</div>
+<%= will_paginate @crafts, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @crafts.each do |crafts| %>
+    <% if crafts.crafts != nil && crafts.crafts != "" %>
+    <li>
+      <%= crafts.name %> &nbsp; | &nbsp; 
+      <%= crafts.crafts %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @crafts, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Games</div>
+<%= will_paginate @games, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @games.each do |games| %>
+    <% if games.games != nil && games.games != "" %>
+    <li>
+      <%= games.name %> &nbsp; | &nbsp; 
+      <%= games.games %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @games, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Guitars</div>
+<%= will_paginate @guitars, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @guitars.each do |guitars| %>
+    <% if guitars.guitars != nil && guitars.guitars != "" %>
+    <li>
+      <%= guitars.name %> &nbsp; | &nbsp; 
+      <%= guitars.guitars %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @guitars, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Hiking</div>
+<%= will_paginate @hiking, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @hiking.each do |hiking| %>
+    <% if hiking.hiking != nil && hiking.hiking != "" %>
+    <li>
+      <%= hiking.name %> &nbsp; | &nbsp; 
+      <%= hiking.hiking %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @hiking, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Nature</div>
+<%= will_paginate @nature, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @nature.each do |nature| %>
+    <% if nature.nature != nil && nature.nature != "" %>
+    <li>
+      <%= nature.name %> &nbsp; | &nbsp; 
+      <%= nature.nature %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @nature, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Pottery</div>
+<%= will_paginate @pottery, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @pottery.each do |pottery| %>
+    <% if pottery.pottery != nil && pottery.pottery != "" %>
+    <li>
+      <%= pottery.name %> &nbsp; | &nbsp; 
+      <%= pottery.pottery %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @pottery, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Sewing</div>
+<%= will_paginate @sewing, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @sewing.each do |sewing| %>
+    <% if sewing.sewing != nil && sewing.sewing != "" %>
+    <li>
+      <%= sewing.name %> &nbsp; | &nbsp; 
+      <%= sewing.sewing %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @sewing, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Sign</div>
+<%= will_paginate @sign, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @sign.each do |sign| %>
+    <% if sign.sign != nil && sign.sign != "" %>
+    <li>
+      <%= sign.name %> &nbsp; | &nbsp; 
+      <%= sign.sign %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @sign, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Spanish</div>
+<%= will_paginate @spanish, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @spanish.each do |spanish| %>
+    <% if spanish.spanish != nil && spanish.spanish != "" %>
+    <li>
+      <%= spanish.name %> &nbsp; | &nbsp; 
+      <%= spanish.spanish %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @spanish, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Writing</div>
+<%= will_paginate @writing, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @writing.each do |writing| %>
+    <% if writing.writing != nil && writing.writing != "" %>
+    <li>
+      <%= writing.name %> &nbsp; | &nbsp; 
+      <%= writing.writing %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @writing, page_links: false, class: "blank" %>
+
+<br />
+
+<div>Percussion</div>
+<%= will_paginate @percussion, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @percussion.each do |percussion| %>
+    <% if percussion.percussion != nil && percussion.percussion != "" %>
+    <li>
+      <%= percussion.name %> &nbsp; | &nbsp; 
+      <%= percussion.percussion %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @percussion %>
