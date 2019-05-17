@@ -5,7 +5,7 @@
 <div><b>Archery</b></div>
 <ul class="campers">
   <% @archery.each do |archery| %>
-    <% if archery.archery != nil && archery.archery != "" %>
+    <% if archery.archery != nil && archery.archery != "" && archery.archery != 9 %>
     <li>
       <%= archery.name %> &nbsp; | &nbsp; 
       <%= archery.archery %>
@@ -23,7 +23,7 @@
 <%= will_paginate @riflery, page_links: false, class: "blank" %>
 <ul class="campers">
   <% @riflery.each do |riflery| %>
-    <% if riflery.riflery != nil && riflery.riflery != "" %>
+    <% if riflery.riflery != nil && riflery.riflery != "" && riflery.riflery != 9 %>
     <li>
       <%= riflery.name %> &nbsp; | &nbsp; 
       <%= riflery.riflery %>
@@ -41,7 +41,7 @@
 <%= will_paginate @canoeing, page_links: false, class: "blank" %>
 <ul class="campers">
   <% @canoeing.each do |canoeing| %>
-    <% if canoeing.canoeing != nil && canoeing.canoeing != "" %>
+    <% if canoeing.canoeing != nil && canoeing.canoeing != "" && canoeing.canoeing != 9 %>
     <li>
       <%= canoeing.name %> &nbsp; | &nbsp; 
       <%= canoeing.canoeing %>
@@ -55,137 +55,11 @@
 <b><hr style="color: black !important; border: solid 1px black !important"></b>
 <br />
 
-<div><b>Interpretive Movement</b></div>
-<%= will_paginate @dance, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @dance.each do |dance| %>
-    <% if dance.dance != nil && dance.dance != "" %>
-    <li>
-      <%= dance.name %> &nbsp; | &nbsp; 
-      <%= dance.dance %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @dance, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Drama</b></div>
-<%= will_paginate @drama, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @drama.each do |drama| %>
-    <% if drama.drama != nil && drama.drama != "" %>
-    <li>
-      <%= drama.name %> &nbsp; | &nbsp; 
-      <%= drama.drama %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @drama, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Puppets</b></div>
-<%= will_paginate @puppets, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @puppets.each do |puppets| %>
-    <% if puppets.puppets != nil && puppets.puppets != "" %>
-    <li>
-      <%= puppets.name %> &nbsp; | &nbsp; 
-      <%= puppets.puppets %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @puppets, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Choir</b></div>
-<%= will_paginate @choir, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @choir.each do |choir| %>
-    <% if choir.choir != nil && choir.choir != "" %>
-    <li>
-      <%= choir.name %> &nbsp; | &nbsp; 
-      <%= choir.choir %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @choir, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Whackers</b></div>
-<%= will_paginate @whackers, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @whackers.each do |whackers| %>
-    <% if whackers.whackers != nil && whackers.whackers != "" %>
-    <li>
-      <%= whackers.name %> &nbsp; | &nbsp; 
-      <%= whackers.whackers %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @whackers, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Ropes</b></div>
-<%= will_paginate @ropes, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @ropes.each do |ropes| %>
-    <% if ropes.ropes != nil && ropes.ropes != "" %>
-    <li>
-      <%= ropes.name %> &nbsp; | &nbsp; 
-      <%= ropes.ropes %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @ropes, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Camping</b></div>
-<%= will_paginate @camping, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @camping.each do |camping| %>
-    <% if camping.camping != nil && camping.camping != "" %>
-    <li>
-      <%= camping.name %> &nbsp; | &nbsp; 
-      <%= camping.camping %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @camping, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
 <div><b>Baking</b></div>
 <%= will_paginate @baking, page_links: false, class: "blank" %>
 <ul class="campers">
   <% @baking.each do |baking| %>
-    <% if baking.baking != nil && baking.baking != "" %>
+    <% if baking.baking != nil && baking.baking != "" && baking.baking != 9 %>
     <li>
       <%= baking.name %> &nbsp; | &nbsp; 
       <%= baking.baking %>
@@ -199,11 +73,137 @@
 <b><hr style="color: black !important; border: solid 1px black !important"></b>
 <br />
 
+<div><b>Camping</b></div>
+<%= will_paginate @camping, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @camping.each do |camping| %>
+    <% if camping.camping != nil && camping.camping != "" && camping.camping != 9 %>
+    <li>
+      <%= camping.name %> &nbsp; | &nbsp; 
+      <%= camping.camping %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @camping, page_links: false, class: "blank" %>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Rock Wall</b></div>
+<%= will_paginate @rocks, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @rocks.each do |rocks| %>
+    <% if rocks.rocks != nil && rocks.rocks != "" && rocks.rocks != 9 %>
+    <li>
+      <%= rocks.name %> &nbsp; | &nbsp; 
+      <%= rocks.rocks %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @rocks, page_links: false, class: "blank" %>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Fishing</b></div>
+<%= will_paginate @fishing, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @fishing.each do |fishing| %>
+    <% if fishing.fishing != nil && fishing.fishing != "" && fishing.fishing != 9 %>
+    <li>
+      <%= fishing.name %> &nbsp; | &nbsp; 
+      <%= fishing.fishing %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @fishing, page_links: false, class: "blank" %>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Hiking</b></div>
+<%= will_paginate @hiking, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @hiking.each do |hiking| %>
+    <% if hiking.hiking != nil && hiking.hiking != "" && hiking.hiking != 9 %>
+    <li>
+      <%= hiking.name %> &nbsp; | &nbsp; 
+      <%= hiking.hiking %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @hiking, page_links: false, class: "blank" %>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Pottery</b></div>
+<%= will_paginate @pottery, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @pottery.each do |pottery| %>
+    <% if pottery.pottery != nil && pottery.pottery != "" && pottery.pottery != 9 %>
+    <li>
+      <%= pottery.name %> &nbsp; | &nbsp; 
+      <%= pottery.pottery %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @pottery, page_links: false, class: "blank" %>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Creative Arts</b></div>
+<%= will_paginate @arts, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @arts.each do |arts| %>
+    <% if arts.arts != nil && arts.arts != "" && arts.arts != 9 %>
+    <li>
+      <%= arts.name %> &nbsp; | &nbsp; 
+      <%= arts.arts %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @arts, page_links: false, class: "blank" %>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Percussion</b></div>
+<%= will_paginate @percussion, page_links: false, class: "blank" %>
+<ul class="campers">
+  <% @percussion.each do |percussion| %>
+    <% if percussion.percussion != nil && percussion.percussion != "" && percussion.percussion != 9 %>
+    <li>
+      <%= percussion.name %> &nbsp; | &nbsp; 
+      <%= percussion.percussion %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= will_paginate @percussion, page_links: false, class: "blank" %>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
 <div><b>Crafts</b></div>
 <%= will_paginate @crafts, page_links: false, class: "blank" %>
 <ul class="campers">
   <% @crafts.each do |crafts| %>
-    <% if crafts.crafts != nil && crafts.crafts != "" %>
+    <% if crafts.crafts != nil && crafts.crafts != "" && crafts.crafts != 9 %>
     <li>
       <%= crafts.name %> &nbsp; | &nbsp; 
       <%= crafts.crafts %>
@@ -221,7 +221,7 @@
 <%= will_paginate @games, page_links: false, class: "blank" %>
 <ul class="campers">
   <% @games.each do |games| %>
-    <% if games.games != nil && games.games != "" %>
+    <% if games.games != nil && games.games != "" && games.games != 9 %>
     <li>
       <%= games.name %> &nbsp; | &nbsp; 
       <%= games.games %>
@@ -239,7 +239,7 @@
 <%= will_paginate @guitars, page_links: false, class: "blank" %>
 <ul class="campers">
   <% @guitars.each do |guitars| %>
-    <% if guitars.guitars != nil && guitars.guitars != "" %>
+    <% if guitars.guitars != nil && guitars.guitars != "" && guitars.guitars != 9 %>
     <li>
       <%= guitars.name %> &nbsp; | &nbsp; 
       <%= guitars.guitars %>
@@ -247,148 +247,6 @@
     <% end %>
   <% end %>
 </ul>
-<%= will_paginate @guitars, page_links: false, class: "blank" %>
+<%= will_paginate @guitars %>
 
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Hiking</b></div>
-<%= will_paginate @hiking, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @hiking.each do |hiking| %>
-    <% if hiking.hiking != nil && hiking.hiking != "" %>
-    <li>
-      <%= hiking.name %> &nbsp; | &nbsp; 
-      <%= hiking.hiking %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @hiking, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Nature</b></div>
-<%= will_paginate @nature, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @nature.each do |nature| %>
-    <% if nature.nature != nil && nature.nature != "" %>
-    <li>
-      <%= nature.name %> &nbsp; | &nbsp; 
-      <%= nature.nature %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @nature, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Pottery</b></div>
-<%= will_paginate @pottery, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @pottery.each do |pottery| %>
-    <% if pottery.pottery != nil && pottery.pottery != "" %>
-    <li>
-      <%= pottery.name %> &nbsp; | &nbsp; 
-      <%= pottery.pottery %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @pottery, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Sewing</b></div>
-<%= will_paginate @sewing, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @sewing.each do |sewing| %>
-    <% if sewing.sewing != nil && sewing.sewing != "" %>
-    <li>
-      <%= sewing.name %> &nbsp; | &nbsp; 
-      <%= sewing.sewing %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @sewing, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Sign</b></div>
-<%= will_paginate @sign, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @sign.each do |sign| %>
-    <% if sign.sign != nil && sign.sign != "" %>
-    <li>
-      <%= sign.name %> &nbsp; | &nbsp; 
-      <%= sign.sign %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @sign, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Spanish</b></div>
-<%= will_paginate @spanish, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @spanish.each do |spanish| %>
-    <% if spanish.spanish != nil && spanish.spanish != "" %>
-    <li>
-      <%= spanish.name %> &nbsp; | &nbsp; 
-      <%= spanish.spanish %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @spanish, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Writing</b></div>
-<%= will_paginate @writing, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @writing.each do |writing| %>
-    <% if writing.writing != nil && writing.writing != "" %>
-    <li>
-      <%= writing.name %> &nbsp; | &nbsp; 
-      <%= writing.writing %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @writing, page_links: false, class: "blank" %>
-
-<br />
-<b><hr style="color: black !important; border: solid 1px black !important"></b>
-<br />
-
-<div><b>Percussion</b></div>
-<%= will_paginate @percussion, page_links: false, class: "blank" %>
-<ul class="campers">
-  <% @percussion.each do |percussion| %>
-    <% if percussion.percussion != nil && percussion.percussion != "" %>
-    <li>
-      <%= percussion.name %> &nbsp; | &nbsp; 
-      <%= percussion.percussion %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= will_paginate @percussion %>
+<%# THE SAME CAMPER CAN BE SCHEDULED FOR THE SAME DAY IF THEY CHOOSE PERCUSSION 1 AND GUITARS 2 IF ONLY 11 PEOPLE CHOSE GUITARS AS 1 LOW CHANCE, FIX LATER %>

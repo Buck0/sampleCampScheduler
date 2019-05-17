@@ -19,7 +19,7 @@
                  riflery:    num2,
                  camping:    num3,
                  crafts:     num4,
-                 drama:      num5,
+                 arts:      num5,
                  percussion: num6,
                  hiking:     num7)
 end

@@ -14,28 +14,20 @@ ActiveRecord::Schema.define(version: 20190514222215) do
 
   create_table "campers", force: :cascade do |t|
     t.string "name"
-    t.integer "archery"
-    t.integer "riflery"
-    t.integer "canoeing"
-    t.integer "dance"
-    t.integer "drama"
-    t.integer "puppets"
-    t.integer "choir"
-    t.integer "whackers"
-    t.integer "ropes"
-    t.integer "camping"
-    t.integer "baking"
-    t.integer "crafts"
-    t.integer "games"
-    t.integer "guitars"
-    t.integer "hiking"
-    t.integer "nature"
-    t.integer "pottery"
-    t.integer "sewing"
-    t.integer "sign"
-    t.integer "spanish"
-    t.integer "writing"
-    t.integer "percussion"
+    t.integer "archery", default: 9
+    t.integer "riflery", default: 9
+    t.integer "canoeing", default: 9
+    t.integer "baking", default: 9
+    t.integer "camping", default: 9
+    t.integer "rocks", default: 9
+    t.integer "fishing", default: 9
+    t.integer "hiking", default: 9
+    t.integer "pottery", default: 9
+    t.integer "arts", default: 9
+    t.integer "percussion", default: 9
+    t.integer "crafts", default: 9
+    t.integer "games", default: 9
+    t.integer "guitars", default: 9
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_campers_on_name", unique: true

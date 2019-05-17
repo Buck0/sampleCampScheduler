@@ -13,70 +13,46 @@
       <!---<div>Please enter 1-7 based on the camptivities desired by the camper</div>--->
 
       <%= f.label :archery %>
-      <%= f.number_field :archery, in: 1..8, class: 'form-control' %>
+      <%= f.number_field :archery, in: 1..9, class: 'form-control' %>
 
       <%= f.label :riflery %>
-      <%= f.number_field :riflery, in: 1..8, class: 'form-control' %>
+      <%= f.number_field :riflery, in: 1..9, class: 'form-control' %>
       
       <%= f.label :canoeing %>
-      <%= f.number_field :canoeing, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :interpretive_movement %>
-      <%= f.number_field :dance, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :drama %>
-      <%= f.number_field :drama, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :puppets %>
-      <%= f.number_field :puppets, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :choir %>
-      <%= f.number_field :choir, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :whackers %>
-      <%= f.number_field :whackers, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :ropes %>
-      <%= f.number_field :ropes, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :camping %>
-      <%= f.number_field :camping, in: 1..8, class: 'form-control' %>
+      <%= f.number_field :canoeing, in: 1..9, class: 'form-control' %>
 
       <%= f.label :baking %>
-      <%= f.number_field :baking, in: 1..8, class: 'form-control' %>
+      <%= f.number_field :baking, in: 1..9, class: 'form-control' %>
 
-      <%= f.label :crafts %>
-      <%= f.number_field :crafts, in: 1..8, class: 'form-control' %>
+      <%= f.label :camping %>
+      <%= f.number_field :camping, in: 1..9, class: 'form-control' %>
 
-      <%= f.label :games %>
-      <%= f.number_field :games, in: 1..8, class: 'form-control' %>
+      <%= f.label :rock_wall %>
+      <%= f.number_field :rocks, in: 1..9, class: 'form-control' %>
 
-      <%= f.label :guitars %>
-      <%= f.number_field :guitars, in: 1..8, class: 'form-control' %>
+      <%= f.label :fishing %>
+      <%= f.number_field :fishing, in: 1..9, class: 'form-control' %>
 
       <%= f.label :hiking %>
-      <%= f.number_field :hiking, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :nature %>
-      <%= f.number_field :nature, in: 1..8, class: 'form-control' %>
+      <%= f.number_field :hiking, in: 1..9, class: 'form-control' %>
 
       <%= f.label :pottery %>
-      <%= f.number_field :pottery, in: 1..8, class: 'form-control' %>
+      <%= f.number_field :pottery, in: 1..9, class: 'form-control' %>
 
-      <%= f.label :sewing %>
-      <%= f.number_field :sewing, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :sign %>
-      <%= f.number_field :sign, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :spanish %>
-      <%= f.number_field :spanish, in: 1..8, class: 'form-control' %>
-
-      <%= f.label :writing %>
-      <%= f.number_field :writing, in: 1..8, class: 'form-control' %>
+      <%= f.label :creative_arts %>
+      <%= f.number_field :arts, in: 1..9, class: 'form-control' %>
 
       <%= f.label :percussion %>
-      <%= f.number_field :percussion, in: 1..8, class: 'form-control' %>
+      <%= f.number_field :percussion, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :crafts %>
+      <%= f.number_field :crafts, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :games %>
+      <%= f.number_field :games, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :guitars %>
+      <%= f.number_field :guitars, in: 1..9, class: 'form-control' %>
 
       <%= f.submit "Update Camper", class: "btn btn-primary" %>
     <% end %>
