@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   get '/campers/all', to: 'campers#index'
   get '/schedule', to: 'campers#schedule'
   
-  root 'static_pages#home'
+  root 'sessions#new'
+  
+  #root 'static_pages#home'
   
   get    '/new',     to: 'users#new'
   post   '/new',     to: 'users#create'
