@@ -1,5 +1,110 @@
 <% provide(:title, 'Schedule') %>
-<h1>Schedule</h1>
+<% if params[:page] %>
+<h1>Activities Schedule Slot <%= "#{params[:page]}" %></h1>
+
+<% else %>
+<h1>Activities Schedule Slot 1</h1>
+<% end %>
+
+<%= will_paginate @un %>
+
+<div><b>Unassigned Campers for this Slot also with activities they will not attend this week</b></div>
+<ul class="campers">
+  <% @un.each do |un| %>
+    <% if un.name != "Open Slot" %>
+      <li>
+        <%= un.name %> &nbsp; | &nbsp;
+        <% if un.archery != 9 && !un.isArch %>
+          <b>Archery: <%= un.archery %></b>; 
+        <% end %>
+        <% if un.riflery != 9 && !un.isRif %>
+          <b>Riflery: <%= un.riflery %></b>; 
+        <% end %>
+        <% if un.canoeing != 9 && !un.isCan %>
+          <b>Canoeing: <%= un.canoeing %></b>; 
+        <% end %>
+        <% if un.baking != 9 && !un.isBake %>
+          <b>Baking: <%= un.baking %></b>; 
+        <% end %>
+        <% if un.camping != 9 && !un.isCamp %>
+          <b>Camping: <%= un.camping %></b>; 
+        <% end %>
+        <% if un.rocks != 9 && !un.isRock %>
+          <b>Rocks: <%= un.rocks %></b>; 
+        <% end %>
+        <% if un.fishing != 9 && !un.isFish %>
+          <b>Fishing: <%= un.fishing %></b>; 
+        <% end %>
+        <% if un.hiking != 9 && !un.isHike %>
+          <b>Hiking: <%= un.hiking %></b>; 
+        <% end %>
+        <% if un.pottery != 9 && !un.isPot %>
+          <b>Pottery: <%= un.pottery %></b>; 
+        <% end %>
+        <% if un.arts != 9 && !un.isArt %>
+          <b>Arts: <%= un.arts %></b>; 
+        <% end %>
+        <% if un.percussion != 9 && !un.isPer %>
+          <b>Percussion: <%= un.percussion %></b>; 
+        <% end %>
+        <% if un.crafts != 9 && !un.isCraft %>
+          <b>Crafts: <%= un.crafts %></b>; 
+        <% end %>
+        <% if un.games != 9 && !un.isGame %>
+          <b>Games: <%= un.games %></b>; 
+        <% end %>
+        <% if un.guitars != 9 && !un.isGuit %>
+          <b>Guitars: <%= un.guitars %></b>
+        <% end %>
+        <%# The next are just the activities they did not choose %>
+        <% if un.archery == 9 && !un.isArch %>
+          Archery: <%= un.archery %>; 
+        <% end %>
+        <% if un.riflery == 9 && !un.isRif %>
+          Riflery: <%= un.riflery %>; 
+        <% end %>
+        <% if un.canoeing == 9 && !un.isCan %>
+          Canoeing: <%= un.canoeing %>; 
+        <% end %>
+        <% if un.baking == 9 && !un.isBake %>
+          Baking: <%= un.baking %>; 
+        <% end %>
+        <% if un.camping == 9 && !un.isCamp %>
+          Camping: <%= un.camping %>; 
+        <% end %>
+        <% if un.rocks == 9 && !un.isRock %>
+          Rocks: <%= un.rocks %>; 
+        <% end %>
+        <% if un.fishing == 9 && !un.isFish %>
+          Fishing: <%= un.fishing %>; 
+        <% end %>
+        <% if un.hiking == 9 && !un.isHike %>
+          Hiking: <%= un.hiking %>; 
+        <% end %>
+        <% if un.pottery == 9 && !un.isPot %>
+          Pottery: <%= un.pottery %>; 
+        <% end %>
+        <% if un.arts == 9 && !un.isArt %>
+          Arts: <%= un.arts %>; 
+        <% end %>
+        <% if un.percussion == 9 && !un.isPer %>
+          Percussion: <%= un.percussion %>; 
+        <% end %>
+        <% if un.crafts == 9 && !un.isCraft %>
+          Crafts: <%= un.crafts %>; 
+        <% end %>
+        <% if un.games == 9 && !un.isGame %>
+          Games: <%= un.games %>; 
+        <% end %>
+        <% if un.guitars == 9 && !un.isGuit %>
+          Guitars: <%= un.guitars %>
+        <% end %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= will_paginate @un %>
 
 <%= will_paginate @archery %>
 <div><b>Archery</b></div>

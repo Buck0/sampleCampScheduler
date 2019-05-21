@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/campers', to: 'campers#create'
   get '/campers/all', to: 'campers#index'
   get '/schedule', to: 'campers#schedule'
+  post '/schedule', to: 'campers#config'
   
   root 'sessions#new'
   

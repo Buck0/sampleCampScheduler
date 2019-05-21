@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#Camper.create!(name:    "Empty Slot"  )
+
 99.times do |n|
   num = (n % 7) + 1
   num2 = ((num + 1) % 7) + 1
