@@ -10,3 +10,15 @@
   <%#= link_to "Create a Schedule", '#', class: "btn btn-lg btn-primary" %>
   <%= link_to "View this week's Schedule", schedule_path, class: "btn btn-lg btn-primary" %>
 </div>
+<br />
+<br />
+<div class="center jumbotron">
+  <h1>Irreversible actions</h1>
+  
+  <h2>
+    What would you like to delete/reset?
+  </h2>
+  
+  <%= link_to "Delete the list of Campers", disintigrate_path, method: :delete, class: "btn btn-lg btn-primary", style: "background-color: red !important" %>
+  <%= link_to "Reset this week's Schedule", reset_path, method: :delete, class: "btn btn-lg btn-primary", style: "background-color: red !important" %>
+</div>

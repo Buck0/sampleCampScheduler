@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get '/campers/all', to: 'campers#index'
   get '/schedule', to: 'campers#schedule'
   post '/schedule', to: 'campers#config'
+  delete '/reset', to: 'campers#reset'
+  delete '/disintigrate', to: 'campers#disintigrate'
+  delete '/destroy', to: 'campers#destroy'
   
   root 'sessions#new'
   

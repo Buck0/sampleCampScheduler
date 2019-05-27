@@ -7,8 +7,14 @@
 <% end %>
 
 <%= will_paginate @un %>
-
+<% if @un.first.name != "Open Slot" %>
 <div><b>Unassigned Campers for this Slot also with activities they will not attend this week</b></div>
+<br />
+<% else %>
+<div><b>There are no unassigned campers for this slot</b></div>
+<br />
+<br />
+<% end %>
 <ul class="campers">
   <% @un.each do |un| %>
     <% if un.name != "Open Slot" %>
@@ -42,7 +48,7 @@
           <b>Pottery: <%= un.pottery %></b>; 
         <% end %>
         <% if un.arts != 9 && !un.isArt %>
-          <b>Arts: <%= un.arts %></b>; 
+          <b>Creative Arts: <%= un.arts %></b>; 
         <% end %>
         <% if un.percussion != 9 && !un.isPer %>
           <b>Percussion: <%= un.percussion %></b>; 
@@ -85,7 +91,7 @@
           Pottery: <%= un.pottery %>; 
         <% end %>
         <% if un.arts == 9 && !un.isArt %>
-          Arts: <%= un.arts %>; 
+          Creative Arts: <%= un.arts %>; 
         <% end %>
         <% if un.percussion == 9 && !un.isPer %>
           Percussion: <%= un.percussion %>; 
@@ -104,9 +110,12 @@
   <% end %>
 </ul>
 
-<%= will_paginate @un %>
+<br />
+<br />
 
-<%= will_paginate @archery %>
+<%= will_paginate @un, page_links: false, class: "blank" %>
+
+<%= will_paginate @archery, page_links: false, class: "blank" %>
 <div><b>Archery</b></div>
 <ul class="campers">
   <% @archery.each do |archery| %>

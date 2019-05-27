@@ -1,10 +1,44 @@
 class CampersController < ApplicationController
  # MAJOR ERROR IF THE SERVER RESTARTS, THE VARIABLES ARE NO LONGER DEFINED**********
  # PLEASE FIX IF POSSIBLE***********************************************************
+ def reset
+   @all = Camper.all
+   
+   @all.each do |all|
+     all.update_attributes(isArch: false, isRif: false, isCan: false, isBake: false, isCamp: false, isRock: false, isFish: false,
+                            isHike: false, isPot: false, isArt: false, isPer: false, isCraft: false, isGame: false, isGuit: false)
+                            
+   end
+   
+   flash[:success] = "The schedule has been successfully reset"
+   redirect_to admin_path
+ end
+ 
+ def disintigrate
+   Camper.delete_all
+   if Camper.any?
+     flash[:warning] = "Something went wrong"
+   else
+    flash[:success] = "The list of campers has been deleted"
+   end
+  redirect_to admin_path
+ end
+ 
+ def destroy
+  Camper.find(params[:id]).destroy
+    flash[:success] = "Camper deleted"
+    redirect_to campers_all_path
+ end
+ 
   def schedule
     if !logged_in?
       redirect_to login_path
       flash[:danger] = 'Please Login to use Admin Functions'
+    end
+    
+    if !Camper.any?
+      flash[:warning] = "There are no campers to schedule"
+      redirect_to admin_path
     end
     
     @campers = Camper.reorder("name ASC").paginate(per_page: 10, page: params[:page])
@@ -13,9 +47,9 @@ class CampersController < ApplicationController
     one = @all[0]
     two = @all[1]
 
-    if (one.isArch || one.isRif || one.isCan || one.isBake || one.isCamp || one.isRock || one.isFish || one.isHike || 
-        one.isPot || one.isArt || one.isPer || one.isCraft || one.isGame || one.isGuit)
-      # if the first camper has been scheduled then the rest should have been so skip the scheduling bit and just bring the variables
+    if (one && (one.isArch || one.isRif || one.isCan || one.isBake || one.isCamp || one.isRock || one.isFish || one.isHike || 
+        one.isPot || one.isArt || one.isPer || one.isCraft || one.isGame || one.isGuit))
+      # if the first camper has been scheduled then the rest should have been so skip the scheduling bit (since it would break otherwise) and just get the variables
       @archery = $archery.paginate(per_page: 16, page: params[:page])
       @riflery = $riflery.paginate(per_page: 16, page: params[:page])
       @canoeing = $canoeing.paginate(per_page: 16, page: params[:page])
@@ -32,8 +66,8 @@ class CampersController < ApplicationController
       @guitars = $guitars.paginate(per_page: 6, page: params[:page])
     
       @un = $un.paginate(per_page: 90, page: params[:page])
-    elsif (two.isArch || two.isRif || two.isCan || two.isBake || two.isCamp || two.isRock || two.isFish || two.isHike || 
-            two.isPot || two.isArt || two.isPer || two.isCraft || two.isGame || two.isGuit)
+    elsif (two && (two.isArch || two.isRif || two.isCan || two.isBake || two.isCamp || two.isRock || two.isFish || two.isHike || 
+            two.isPot || two.isArt || two.isPer || two.isCraft || two.isGame || two.isGuit))
       #properly paginate the thing
       @archery = $archery.paginate(per_page: 16, page: params[:page])
       @riflery = $riflery.paginate(per_page: 16, page: params[:page])
@@ -161,8 +195,9 @@ class CampersController < ApplicationController
     #end
     
     
-    for i in 1..7
+    for i in 1..5
       @all.each do |all|
+        # OLD COMMENT BELOW NEEDS REDACTING
         # if a kid gets skipped for one then they'll continually get skipped if they dont get precidence *****
         # this actually shouldn't happen since the kids that are technically "in front" of them have had their turn by the next slot
         if all.archery != 9 && all.archery <= i && !all.isArch && $archery.size < i * 16
@@ -181,17 +216,17 @@ class CampersController < ApplicationController
           $canoeing << all
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking <= i && !all.isBake && $baking.size < i * 10
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && $baking.size < i * 10 && i != 4
           all.update_attribute(:isBake, true)
           $baking << all
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && $camping.size < i * 24
+        elsif all.camping != 9 && all.camping <= i && !all.isCamp && $camping.size < i * 24 && i == 4
           all.update_attribute(:isCamp, true)
           $camping << all
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && $rocks.size < i * 12
+        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && $rocks.size < i * 12 && (i == 2 || i == 4)
           all.update_attribute(:isRock, true)
           $rocks << all
           #all.isRock = true
@@ -201,7 +236,7 @@ class CampersController < ApplicationController
           $fishing << all
           #all.isFish = true
           #next
-        elsif all.hiking != 9 && all.hiking <= i && !all.isHike && $hiking.size < i * 90
+        elsif all.hiking != 9 && all.hiking <= i && !all.isHike && $hiking.size < i * 90 && i != 1
           all.update_attribute(:isHike, true)
           $hiking << all
           #all.isHike = true
@@ -211,32 +246,105 @@ class CampersController < ApplicationController
           $pottery << all
           #all.isPot = true
           #next
-        elsif all.arts != 9 && all.arts <= i && !all.isArt && $arts.size < i * 90
+        elsif all.arts != 9 && all.arts <= i && !all.isArt && $arts.size < i * 90 && i != 4
           all.update_attribute(:isArt, true)
           $arts << all
           #all.isArt = true
           #next
-        elsif all.percussion != 9 && all.percussion <= i && !all.isPer && $percussion.size < i * 10
+        elsif all.percussion != 9 && all.percussion <= i && !all.isPer && $percussion.size < i * 10 && (i == 1 || i == 3)
           all.update_attribute(:isPer, true)
           $percussion << all
           #all.isPer = true
           #next
-        elsif all.crafts != 9 && all.crafts <= i && !all.isCraft && $crafts.size < i * 16
+        elsif all.crafts != 9 && all.crafts <= i && !all.isCraft && $crafts.size < i * 16 && i != 2 && i != 4
           all.update_attribute(:isCraft, true)
           $crafts << all
           #all.isCraft = true
           #next
-        elsif all.games != 9 && all.games <= i && !all.isGame && $games.size < i * 90
+        elsif all.games != 9 && all.games <= i && !all.isGame && $games.size < i * 90 && i != 3
           all.update_attribute(:isGame, true)
           $games << all
           #all.isGame = true
           #next
-        elsif all.guitars != 9 && all.guitars <= i && !all.isGuit && $guitars.size < i * 10
+        elsif all.guitars != 9 && all.guitars <= i && !all.isGuit && $guitars.size < i * 10 && (i == 1 || i == 3)
+          all.update_attribute(:isGuit, true)
+          $guitars << all
+          #next
+          
+          # This next section will use the camper's optional activites if they could not get assigned on one of their main activities
+          
+        elsif all.archery != 9 && all.archery > 5 && !all.isArch && $archery.size < i * 16
+          all.update_attribute(:isArch, true)
+          $archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery > 5 && !all.isRif && $riflery.size < i * 16
+          all.update_attribute(:isRif, true)
+          $riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing > 5 && !all.isCan && $canoeing.size < i * 16
+          all.update_attribute(:isCan, true)
+          $canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking > 5 && !all.isBake && $baking.size < i * 10 && i != 4
+          all.update_attribute(:isBake, true)
+          $baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && $camping.size < i * 24 && i == 4
+          all.update_attribute(:isCamp, true)
+          $camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && $rocks.size < i * 12 && (i == 2 || i == 4)
+          all.update_attribute(:isRock, true)
+          $rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing > 5 && !all.isFish && $fishing.size < i * 10
+          all.update_attribute(:isFish, true)
+          $fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking > 5 && !all.isHike && $hiking.size < i * 90 && i != 1
+          all.update_attribute(:isHike, true)
+          $hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery > 5 && !all.isPot && $pottery.size < i * 24
+          all.update_attribute(:isPot, true)
+          $pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts > 5 && !all.isArt && $arts.size < i * 90 && i != 4
+          all.update_attribute(:isArt, true)
+          $arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion > 5 && !all.isPer && $percussion.size < i * 10 && (i == 1 || i == 3)
+          all.update_attribute(:isPer, true)
+          $percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts > 5 && !all.isCraft && $crafts.size < i * 16 && i != 2 && i != 4
+          all.update_attribute(:isCraft, true)
+          $crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games > 5 && !all.isGame && $games.size < i * 90 && i != 3
+          all.update_attribute(:isGame, true)
+          $games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars > 5 && !all.isGuit && $guitars.size < i * 10 && (i == 1 || i == 3)
           all.update_attribute(:isGuit, true)
           $guitars << all
           #next
         else
-          # do something here to indicate an unassigned camper
+          # The camper is added to the $un array, indicating an unassigned camper
           $un << all
         end
         

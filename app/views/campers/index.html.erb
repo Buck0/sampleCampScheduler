@@ -6,7 +6,8 @@
   <% @campers.each do |camper| %>
     <li>
       <%= link_to camper.name, camper %> &nbsp; | &nbsp; 
-      <%= link_to "Edit", edit_camper_path(camper) %>
+      <%= link_to "Edit", edit_camper_path(camper) %> &nbsp; | &nbsp; 
+      <%= link_to "Delete", camper, method: :delete, style: "color: red" %>
     </li>
   <% end %>
 </ul>

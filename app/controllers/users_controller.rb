@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Scheduler!"
-      redirect_to @user
+      redirect_to admin_path
     else
       render 'new'
     end
