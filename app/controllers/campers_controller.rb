@@ -319,8 +319,14 @@ class CampersController < ApplicationController
    # this would also require unique varibles for each time slot
    # for now that isn't needed so copypasta the code from 1 down to 5
    
-   @all = Camper.all
    
+   if !Camper.any?
+      flash[:warning] = "There are no campers to schedule"
+      redirect_to admin_path
+    end
+
+   @all = Camper.all
+
    @archery = Array.new
    @riflery = Array.new
    @canoeing = Array.new
@@ -374,7 +380,8 @@ class CampersController < ApplicationController
      @sign = $sign
      @spanish = $spanish
      @talking = $talking
-     
+    
+     params[:activities] = { }
      params[:activities][:slot] = $slot
      params[:activities][:archery] = $isArch
      params[:activities][:riflery] = $isRif
