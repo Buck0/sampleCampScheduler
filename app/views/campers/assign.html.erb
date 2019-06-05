@@ -1,0 +1,371 @@
+<% provide(:title, 'Assign Camper') %>
+<h1>Assign camper</h1>
+
+
+<h2><%= @camper.name %>'s remaining desired activities</h2>
+
+<h2>
+<% if @camper.archery != nil && @camper.archery != "" && @camper.archery != 9 && !@camper.isArch %>
+<%= @camper.archery %> &nbsp; &nbsp;&nbsp;&nbsp;Archery &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.riflery != nil && @camper.riflery != "" && @camper.riflery != 9 && !@camper.isRif %>
+<%= @camper.riflery %> &nbsp; &nbsp;&nbsp;&nbsp;Riflery &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.canoeing != nil && @camper.canoeing != "" && @camper.canoeing != 9 && !@camper.isCan %>
+<%= @camper.canoeing %> &nbsp; &nbsp;&nbsp;&nbsp;Canoeing &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.baking != nil && @camper.baking != "" && @camper.baking != 9 && !@camper.isBake %>
+<%= @camper.baking %> &nbsp; &nbsp;&nbsp;&nbsp;Baking &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.camping != nil && @camper.camping != ""  && @camper.camping != 9 && !@camper.isCamp %>
+<%= @camper.camping %> &nbsp; &nbsp;&nbsp;&nbsp;Camping &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.rocks != nil && @camper.rocks != "" && @camper.rocks != 9 && !@camper.isRock %>
+<%= @camper.rocks %> &nbsp; &nbsp;&nbsp;&nbsp;Rock Wall &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.fishing != nil && @camper.fishing != "" && @camper.fishing != 9 && !@camper.isFish %>
+<%= @camper.fishing %> &nbsp; &nbsp;&nbsp;&nbsp;Fishing &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.hiking != nil && @camper.hiking != "" && @camper.hiking != 9 && !@camper.isHike %>
+<%= @camper.hiking %> &nbsp; &nbsp;&nbsp;&nbsp;Hiking &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.pottery != nil && @camper.pottery != "" && @camper.pottery != 9 && !@camper.isPot %>
+<%= @camper.pottery %> &nbsp; &nbsp;&nbsp;&nbsp;Pottery &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.arts != nil && @camper.arts != "" && @camper.arts != 9 && !@camper.isArt %>
+<%= @camper.arts %> &nbsp; &nbsp;&nbsp;&nbsp;Puppets/Drama &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.percussion != nil && @camper.percussion != "" && @camper.percussion != 9 && !@camper.isPer %>
+<%= @camper.percussion %> &nbsp; &nbsp;&nbsp;&nbsp;Percussion &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.crafts != nil && @camper.crafts != ""  && @camper.crafts != 9 && !@camper.isCraft %>
+<%= @camper.crafts %> &nbsp; &nbsp;&nbsp;&nbsp;Crafts &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.games != nil && @camper.games != ""  && @camper.games != 9 && !@camper.isGame %>
+<%= @camper.games %> &nbsp; &nbsp;&nbsp;&nbsp;Games &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.guitars != nil && @camper.guitars != ""  && @camper.guitars != 9 && !@camper.isGuit %>
+<%= @camper.guitars %> &nbsp; &nbsp;&nbsp;&nbsp;Guitars &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.choir != nil && @camper.choir != "" && @camper.choir != 9 && !@camper.isChoir %>
+<%= @camper.choir %> &nbsp; &nbsp;&nbsp;&nbsp;Choir &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.writing != nil && @camper.writing != "" && @camper.writing != 9 && !@camper.isWrite %>
+<%= @camper.writing %> &nbsp; &nbsp;&nbsp;&nbsp;Creative Writing &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.weaving != nil && @camper.weaving != "" && @camper.weaving != 9 && !@camper.isWeave %>
+<%= @camper.weaving %> &nbsp; &nbsp;&nbsp;&nbsp;Finger weaving &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.notdance != nil && @camper.notdance != "" && @camper.notdance != 9 && !@camper.isNotdance %>
+<%= @camper.notdance %> &nbsp; &nbsp;&nbsp;&nbsp;Interpretive Movement &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.painting != nil && @camper.painting != "" && @camper.painting != 9 && !@camper.isPaint %>
+<%= @camper.painting %> &nbsp; &nbsp;&nbsp;&nbsp;Painting &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.sign != nil && @camper.sign != "" && @camper.sign != 9 && !@camper.isSign %>
+<%= @camper.sign %> &nbsp; &nbsp;&nbsp;&nbsp;Sign Language &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.spanish != nil && @camper.spanish != "" && @camper.spanish != 9 && !@camper.isSpan %>
+<%= @camper.spanish %> &nbsp; &nbsp;&nbsp;&nbsp;Spanish &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+
+<% if @camper.talking != nil && @camper.talking != "" && @camper.talking != 9 && !@camper.isTalk %>
+<%= @camper.talking %> &nbsp; &nbsp;&nbsp;&nbsp;Talking with Missionary &nbsp; &nbsp;| &nbsp; &nbsp;
+<% end %>
+</h2>
+
+<hr />    
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:assign, url: set_camper_path(@camper)) do |f| %>
+      
+      <% if @isArch != "1" %>
+        <%= "Archery is off today" %>
+      <% elsif @archery.size < 16 %>
+        <%= f.label :archery, :class => "checkbox inline" do %>
+        <%= f.check_box :archery %>Archery
+        <% end %>
+      <% else %>
+        <%= "Archery is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isRif != "1" %>
+        <%= "Riflery is off today" %>
+      <% elsif @riflery.size < 16 %>
+        <%= f.label :riflery, :class => "checkbox inline" do  %>
+        <%= f.check_box :riflery %>Riflery
+        <% end %>
+      <% else %>
+        <%= "Riflery is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isCan != "1" %>
+        <%= "Canoeing is off today" %>
+      <% elsif @canoeing.size < 16 %>
+        <%= f.label :canoeing, :class => "checkbox inline" do  %>
+        <%= f.check_box :canoeing %>Canoeing
+        <% end %>
+      <% else %>
+        <%= "Canoeing is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isBake != "1" %>
+        <%= "Baking is off today" %>
+      <% elsif @baking.size < 10 %>
+        <%= f.label :baking, :class => "checkbox inline" do  %>
+        <%= f.check_box :baking %>Baking
+        <% end %>
+      <% else %>
+        <%= "Baking is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isCamp != "1" %>
+        <%= "Camping is off today" %>
+      <% elsif @camping.size < 24 %>
+        <%= f.label :camping, :class => "checkbox inline" do  %>
+        <%= f.check_box :camping %>Camping
+        <% end %>
+      <% else %>
+        <%= "Camping is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isRock != "1" %>
+        <%= "Rock Wall is off today" %>
+      <% elsif @rocks.size < 12 %>
+        <%= f.label :rocks, :class => "checkbox inline" do  %>
+        <%= f.check_box :rocks %>Rock Wall
+        <% end %>
+      <% else %>
+        <%= "Rock Wall is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isFish != "1" %>
+        <%= "Fishing is off today" %>
+      <% elsif @fishing.size < 10 %>
+        <%= f.label :fishing, :class => "checkbox inline" do  %>
+        <%= f.check_box :fishing %>Fishing
+        <% end %>
+      <% else %>
+        <%= "Fishing is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isHike != "1" %>
+        <%= "Hiking is off today" %>
+      <% elsif @hiking.size < 90 %>
+        <%= f.label :hiking, :class => "checkbox inline" do  %>
+        <%= f.check_box :hiking %>Hiking
+        <% end %>
+      <% else %>
+        <%= "Hiking is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isPot != "1" %>
+        <%= "Pottery is off today" %>
+      <% elsif @pottery.size < 24 %>
+        <%= f.label :pottery, :class => "checkbox inline" do  %>
+        <%= f.check_box :pottery %>Pottery
+        <% end %>
+      <% else %>
+        <%= "Pottery is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isArt != "1" %>
+        <%= "Puppets and Drama is off today" %>
+      <% elsif @arts.size < 20 %>
+        <%= f.label :puppets_and_drama, :class => "checkbox inline" do  %>
+        <%= f.check_box :arts %>Puppets/Drama
+        <% end %>
+      <% else %>
+        <%= "Puppets and Drama is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isPer != "1" %>
+        <%= "Percussion is off today" %>
+      <% elsif @percussion.size < 10 %>
+        <%= f.label :percussion, :class => "checkbox inline" do  %>
+        <%= f.check_box :percussion %>Percussion
+        <% end %>
+      <% else %>
+        <%= "Percussion is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isCraft != "1" %>
+        <%= "Crafts is off today" %>
+      <% elsif @crafts.size < 16 %>
+        <%= f.label :crafts, :class => "checkbox inline" do  %>
+        <%= f.check_box :crafts %>Crafts
+        <% end %>
+      <% else %>
+        <%= "Crafts is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isGame != "1" %>
+        <%= "Games is off today" %>
+      <% elsif @games.size < 90 %>
+        <%= f.label :games, :class => "checkbox inline" do  %>
+        <%= f.check_box :games %>Games
+        <% end %>
+      <% else %>
+        <%= "Games is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isGuit != "1" %>
+        <%= "Guitars is off today" %>
+      <% elsif @guitars.size < 10 %>
+        <%= f.label :guitars, :class => "checkbox inline" do  %>
+        <%= f.check_box :guitars %>Guitars
+        <% end %>
+      <% else %>
+        <%= "Guitars is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isChoir != "1" %>
+        <%= "Choir is off today" %>
+      <% elsif @choir.size < 90 %>
+        <%= f.label :choir, :class => "checkbox inline" do  %>
+        <%= f.check_box :choir %>Choir
+        <% end %>
+      <% else %>
+        <%= "Choir is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isWrite != "1" %>
+        <%= "Creative Writing is off today" %>
+      <% elsif @writing.size < 90 %>
+        <%= f.label :creative_writing, :class => "checkbox inline" do  %>
+        <%= f.check_box :writing %>Creative Writing
+        <% end %>
+      <% else %>
+        <%= "Creative writing is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isWeave != "1" %>
+        <%= "Finger Weaving is off today" %>
+      <% elsif @weaving.size < 90 %>
+        <%= f.label :finger_weaving, :class => "checkbox inline" do  %>
+        <%= f.check_box :weaving %>Finger Weaving
+        <% end %>
+      <% else %>
+        <%= "Finger weaving is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isNotdance != "1" %>
+        <%= "Interpretive Movement is off today" %>
+      <% elsif @notdance.size < 90 %>
+        <%= f.label :interpretive_movement, :class => "checkbox inline" do  %>
+        <%= f.check_box :notdance %>Interpretive Movement
+        <% end %>
+      <% else %>
+        <%= "Interpretive Movement is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isPaint != "1" %>
+        <%= "Painting is off today" %>
+      <% elsif @painting.size < 15 %>
+        <%= f.label :painting, :class => "checkbox inline" do  %>
+        <%= f.check_box :painting %>Painting
+        <% end %>
+      <% else %>
+        <%= "Painting is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isSign != "1" %>
+        <%= "Sign Language is off today" %>
+      <% elsif @sign.size < 90 %>
+        <%= f.label :sign_language, :class => "checkbox inline" do  %>
+        <%= f.check_box :sign %>Sign Language
+        <% end %>
+      <% else %>
+        <%= "Sign Language is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isSpan != "1" %>
+        <%= "Spanish is off today" %>
+      <% elsif @spanish.size < 90 %>
+        <%= f.label :spanish, :class => "checkbox inline" do  %>
+        <%= f.check_box :spanish %>Spanish
+        <% end %>
+      <% else %>
+        <%= "Spanish is full" %>
+      <% end %>
+      
+      <hr />
+
+      <% if @isTalk != "1" %>
+        <%= "Talking with Missionary is off today" %>
+      <% elsif @talking.size < 90 %>
+        <%= f.label :talking_with_missionary, :class => "checkbox inline" do  %>
+        <%= f.check_box :talking %>Talking with Missionary
+        <% end %>
+      <% else %>
+        <%= "Talking with Missionary is full" %>
+      <% end %>
+      
+      <br />
+      <br />
+      
+      <%= f.submit "Assign Camper", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

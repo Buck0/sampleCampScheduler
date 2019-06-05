@@ -1,0 +1,623 @@
+<!--- This is the trial, code is copied for schedule so it may not be 100% right --->
+<% provide(:title, 'Schedule') %>
+<% if params[:activities] %>
+<h1>Activities Schedule Slot <%= "#{params[:activities][:slot]}" %></h1>
+
+<% elsif $slot %>
+<h1>Activities Schedule Slot <%= "#{$slot}" %></h1>
+
+<% else %>
+<h1>Activities Schedule Slot 1</h1>
+<% end %>
+
+<div><b>Unassigned Campers for this Slot also with activities they have not attended</b></div>
+<ul class="campers">
+  <% if @un %>
+  <% @un.each do |un| %>
+    <% if un.name != "Open Slot" %>
+      <li>
+        <b><%= link_to "Assign", assign_camper_path(un) %></b> &nbsp; | &nbsp; 
+        <%= un.name %><!--- &nbsp; | &nbsp;
+        <% if un.archery != 9 && !un.isArch %>
+          <b>Archery: <%= un.archery %></b>; 
+        <% end %>
+        <% if un.riflery != 9 && !un.isRif %>
+          <b>Riflery: <%= un.riflery %></b>; 
+        <% end %>
+        <% if un.canoeing != 9 && !un.isCan %>
+          <b>Canoeing: <%= un.canoeing %></b>; 
+        <% end %>
+        <% if un.baking != 9 && !un.isBake %>
+          <b>Baking: <%= un.baking %></b>; 
+        <% end %>
+        <% if un.camping != 9 && !un.isCamp %>
+          <b>Camping: <%= un.camping %></b>; 
+        <% end %>
+        <% if un.rocks != 9 && !un.isRock %>
+          <b>Rocks: <%= un.rocks %></b>; 
+        <% end %>
+        <% if un.fishing != 9 && !un.isFish %>
+          <b>Fishing: <%= un.fishing %></b>; 
+        <% end %>
+        <% if un.hiking != 9 && !un.isHike %>
+          <b>Hiking: <%= un.hiking %></b>; 
+        <% end %>
+        <% if un.pottery != 9 && !un.isPot %>
+          <b>Pottery: <%= un.pottery %></b>; 
+        <% end %>
+        <% if un.arts != 9 && !un.isArt %>
+          <b>Creative Arts: <%= un.arts %></b>; 
+        <% end %>
+        <% if un.percussion != 9 && !un.isPer %>
+          <b>Percussion: <%= un.percussion %></b>; 
+        <% end %>
+        <% if un.crafts != 9 && !un.isCraft %>
+          <b>Crafts: <%= un.crafts %></b>; 
+        <% end %>
+        <% if un.games != 9 && !un.isGame %>
+          <b>Games: <%= un.games %></b>; 
+        <% end %>
+        <% if un.guitars != 9 && !un.isGuit %>
+          <b>Guitars: <%= un.guitars %></b>
+        <% end %>
+        <% if un.choir != 9 && !un.isChoir %>
+          <b>Choir: <%= un.choir %></b>
+        <% end %>
+        <% if un.writing != 9 && !un.isWrite %>
+          <b>Writing: <%= un.writing %></b>
+        <% end %>
+        <% if un.weaving != 9 && !un.isWeave %>
+          <b>Weaving: <%= un.weaving %></b>
+        <% end %>
+        <% if un.notdance != 9 && !un.isNotdance %>
+          <b>Interpretive Movement: <%= un.notdance %></b>
+        <% end %>
+        <% if un.painting != 9 && !un.isPaint %>
+          <b>Painting: <%= un.painting %></b>
+        <% end %>
+        <% if un.sign != 9 && !un.isSign %>
+          <b>Sign Language: <%= un.sign %></b>
+        <% end %>
+        <% if un.spanish != 9 && !un.isSpan %>
+          <b>Spanish: <%= un.spanish %></b>
+        <% end %>
+        <% if un.talking != 9 && !un.isTalk %>
+          <b>Talking with Missionary: <%= un.talking %></b>
+        <% end %>
+        <%# The next are just the activities they did not choose %>
+        <% if un.archery == 9 && !un.isArch %>
+          Archery: <%= un.archery %>; 
+        <% end %>
+        <% if un.riflery == 9 && !un.isRif %>
+          Riflery: <%= un.riflery %>; 
+        <% end %>
+        <% if un.canoeing == 9 && !un.isCan %>
+          Canoeing: <%= un.canoeing %>; 
+        <% end %>
+        <% if un.baking == 9 && !un.isBake %>
+          Baking: <%= un.baking %>; 
+        <% end %>
+        <% if un.camping == 9 && !un.isCamp %>
+          Camping: <%= un.camping %>; 
+        <% end %>
+        <% if un.rocks == 9 && !un.isRock %>
+          Rocks: <%= un.rocks %>; 
+        <% end %>
+        <% if un.fishing == 9 && !un.isFish %>
+          Fishing: <%= un.fishing %>; 
+        <% end %>
+        <% if un.hiking == 9 && !un.isHike %>
+          Hiking: <%= un.hiking %>; 
+        <% end %>
+        <% if un.pottery == 9 && !un.isPot %>
+          Pottery: <%= un.pottery %>; 
+        <% end %>
+        <% if un.arts == 9 && !un.isArt %>
+          Creative Arts: <%= un.arts %>; 
+        <% end %>
+        <% if un.percussion == 9 && !un.isPer %>
+          Percussion: <%= un.percussion %>; 
+        <% end %>
+        <% if un.crafts == 9 && !un.isCraft %>
+          Crafts: <%= un.crafts %>; 
+        <% end %>
+        <% if un.games == 9 && !un.isGame %>
+          Games: <%= un.games %>; 
+        <% end %>
+        <% if un.guitars == 9 && !un.isGuit %>
+          Guitars: <%= un.guitars %>
+        <% end %>
+        <% if un.choir != 9 && !un.isChoir %>
+          Choir: <%= un.choir %>
+        <% end %>
+        <% if un.writing != 9 && !un.isWrite %>
+          Writing: <%= un.writing %>
+        <% end %>
+        <% if un.weaving != 9 && !un.isWeave %>
+          Weaving: <%= un.weaving %>
+        <% end %>
+        <% if un.notdance != 9 && !un.isNotdance %>
+          Interpretive Movement: <%= un.notdance %>
+        <% end %>
+        <% if un.painting != 9 && !un.isPaint %>
+          Painting: <%= un.painting %>
+        <% end %>
+        <% if un.sign != 9 && !un.isSign %>
+          Sign Language: <%= un.sign %>
+        <% end %>
+        <% if un.spanish != 9 && !un.isSpan %>
+          Spanish: <%= un.spanish %>
+        <% end %>
+        <% if un.talking != 9 && !un.isTalk %>
+          Talking with Missionary: <%= un.talking %>
+        <% end %> --->
+      </li>
+    <% end %>
+  <% end %>
+  <% end %>
+</ul>
+
+<br />
+<br />
+
+
+<div><b>Archery</b></div>
+<ul class="campers">
+  <% @archery.each do |archery| %>
+    <% if archery.archery != nil && archery.archery != "" && archery.archery != 9 %>
+    <li>
+      <%= archery.name %> &nbsp; | &nbsp; 
+      <%= archery.archery %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:archery] == "0") || $isArch == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Riflery</b></div>
+<ul class="campers">
+  <% @riflery.each do |riflery| %>
+    <% if riflery.riflery != nil && riflery.riflery != "" && riflery.riflery != 9 %>
+    <li>
+      <%= riflery.name %> &nbsp; | &nbsp; 
+      <%= riflery.riflery %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:riflery] == "0") || $isRif == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Canoeing</b></div>
+<ul class="campers">
+  <% @canoeing.each do |canoeing| %>
+    <% if canoeing.canoeing != nil && canoeing.canoeing != "" && canoeing.canoeing != 9 %>
+    <li>
+      <%= canoeing.name %> &nbsp; | &nbsp; 
+      <%= canoeing.canoeing %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:canoeing] == "0") || $isCan == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Baking</b></div>
+<ul class="campers">
+  <% @baking.each do |baking| %>
+    <% if baking.baking != nil && baking.baking != "" && baking.baking != 9 %>
+    <li>
+      <%= baking.name %> &nbsp; | &nbsp; 
+      <%= baking.baking %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:baking] == "0") || $isBake == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Camping</b></div>
+<ul class="campers">
+  <% @camping.each do |camping| %>
+    <% if camping.camping != nil && camping.camping != "" && camping.camping != 9 %>
+    <li>
+      <%= camping.name %> &nbsp; | &nbsp; 
+      <%= camping.camping %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:camping] == "0") || $isCamp == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Rock Wall</b></div>
+<ul class="campers">
+  <% @rocks.each do |rocks| %>
+    <% if rocks.rocks != nil && rocks.rocks != "" && rocks.rocks != 9 %>
+    <li>
+      <%= rocks.name %> &nbsp; | &nbsp; 
+      <%= rocks.rocks %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:rocks] == "0") || $isRock == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Fishing</b></div>
+<ul class="campers">
+  <% @fishing.each do |fishing| %>
+    <% if fishing.fishing != nil && fishing.fishing != "" && fishing.fishing != 9 %>
+    <li>
+      <%= fishing.name %> &nbsp; | &nbsp; 
+      <%= fishing.fishing %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:fishing] == "0") || $isFish == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Hiking</b></div>
+<ul class="campers">
+  <% @hiking.each do |hiking| %>
+    <% if hiking.hiking != nil && hiking.hiking != "" && hiking.hiking != 9 %>
+    <li>
+      <%= hiking.name %> &nbsp; | &nbsp; 
+      <%= hiking.hiking %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:hiking] == "0") || $isHike == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Pottery</b></div>
+<ul class="campers">
+  <% @pottery.each do |pottery| %>
+    <% if pottery.pottery != nil && pottery.pottery != "" && pottery.pottery != 9 %>
+    <li>
+      <%= pottery.name %> &nbsp; | &nbsp; 
+      <%= pottery.pottery %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:pottery] == "0") || $isPot == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Puppets/Drama</b></div>
+<ul class="campers">
+  <% @arts.each do |arts| %>
+    <% if arts.arts != nil && arts.arts != "" && arts.arts != 9 %>
+    <li>
+      <%= arts.name %> &nbsp; | &nbsp; 
+      <%= arts.arts %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:arts] == "0") || $isArt == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Percussion</b></div>
+<ul class="campers">
+  <% @percussion.each do |percussion| %>
+    <% if percussion.percussion != nil && percussion.percussion != "" && percussion.percussion != 9 %>
+    <li>
+      <%= percussion.name %> &nbsp; | &nbsp; 
+      <%= percussion.percussion %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:percussion] == "0") || $isPer == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Crafts</b></div>
+<ul class="campers">
+  <% @crafts.each do |crafts| %>
+    <% if crafts.crafts != nil && crafts.crafts != "" && crafts.crafts != 9 %>
+    <li>
+      <%= crafts.name %> &nbsp; | &nbsp; 
+      <%= crafts.crafts %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:crafts] == "0") || $isCraft == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Games</b></div>
+<ul class="campers">
+  <% @games.each do |games| %>
+    <% if games.games != nil && games.games != "" && games.games != 9 %>
+    <li>
+      <%= games.name %> &nbsp; | &nbsp; 
+      <%= games.games %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:games] == "0") || $isGame == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Guitars</b></div>
+<ul class="campers">
+  <% @guitars.each do |guitars| %>
+    <% if guitars.guitars != nil && guitars.guitars != "" && guitars.guitars != 9 %>
+    <li>
+      <%= guitars.name %> &nbsp; | &nbsp; 
+      <%= guitars.guitars %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:guitars] == "0") || $isGuit == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Choir</b></div>
+<ul class="campers">
+  <% @choir.each do |choir| %>
+    <% if choir.choir != nil && choir.choir != "" && choir.choir != 9 %>
+    <li>
+      <%= choir.name %> &nbsp; | &nbsp; 
+      <%= choir.choir %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:choir] == "0") || $isChoir == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Creative Writing</b></div>
+<ul class="campers">
+  <% @writing.each do |writing| %>
+    <% if writing.writing != nil && writing.writing != "" && writing.writing != 9 %>
+    <li>
+      <%= writing.name %> &nbsp; | &nbsp; 
+      <%= writing.writing %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:writing] == "0") || $isWrite == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Finger Weaving</b></div>
+<ul class="campers">
+  <% @weaving.each do |weaving| %>
+    <% if weaving.weaving != nil && weaving.weaving != "" && weaving.weaving != 9 %>
+    <li>
+      <%= weaving.name %> &nbsp; | &nbsp; 
+      <%= weaving.weaving %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:weaving] == "0") || $isWeave == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Interpretive Movement</b></div>
+<ul class="campers">
+  <% @notdance.each do |notdance| %>
+    <% if notdance.notdance != nil && notdance.notdance != "" && notdance.notdance != 9 %>
+    <li>
+      <%= notdance.name %> &nbsp; | &nbsp; 
+      <%= notdance.notdance %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:notdance] == "0") || $isNotdance == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Painting</b></div>
+<ul class="campers">
+  <% @painting.each do |painting| %>
+    <% if painting.painting != nil && painting.painting != "" && painting.painting != 9 %>
+    <li>
+      <%= painting.name %> &nbsp; | &nbsp; 
+      <%= painting.painting %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:painting] == "0") || $isPaint == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Sign Language</b></div>
+<ul class="campers">
+  <% @sign.each do |sign| %>
+    <% if sign.sign != nil && sign.sign != "" && sign.sign != 9 %>
+    <li>
+      <%= sign.name %> &nbsp; | &nbsp; 
+      <%= sign.sign %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:sign] == "0") || $isSign == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Spanish</b></div>
+<ul class="campers">
+  <% @spanish.each do |spanish| %>
+    <% if spanish.spanish != nil && spanish.spanish != "" && spanish.spanish != 9 %>
+    <li>
+      <%= spanish.name %> &nbsp; | &nbsp; 
+      <%= spanish.spanish %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:spanish] == "0") || $isSpan == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Talking with Missionary</b></div>
+<ul class="campers">
+  <% @talking.each do |talking| %>
+    <% if talking.talking != nil && talking.talking != "" && talking.talking != 9 %>
+    <li>
+      <%= talking.name %> &nbsp; | &nbsp; 
+      <%= talking.talking %>
+    </li>
+    <% end %>
+  <% end %>
+  <% if (params[:activities] && params[:activities][:talking] == "0") || $isTalk == "0" %>
+  <li>
+    Activity Off Today
+  </li>
+  <% end %>
+</ul>
+
+<br />
+<br />

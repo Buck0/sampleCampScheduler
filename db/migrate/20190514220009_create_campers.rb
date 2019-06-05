@@ -30,6 +30,23 @@ class CreateCampers < ActiveRecord::Migration[5.1]
       t.boolean :isGame, default: false
       t.integer :guitars, default: 9
       t.boolean :isGuit, default: false
+      
+      t.integer :choir, default: 9
+      t.boolean :isChoir, default: false
+      t.integer :writing, default: 9
+      t.boolean :isWrite, default: false
+      t.integer :weaving, default: 9
+      t.boolean :isWeave, default: false
+      t.integer :painting, default: 9
+      t.boolean :isPaint, default: false
+      t.integer :sign, default: 9
+      t.boolean :isSign, default: false
+      t.integer :spanish, default: 9
+      t.boolean :isSpan, default: false
+      t.integer :talking, default: 9
+      t.boolean :isTalk, default: false
+      t.integer :notdance, default: 9
+      t.boolean :isNotdance, default: false
 
       t.timestamps
     end

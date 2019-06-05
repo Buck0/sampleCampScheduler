@@ -39,7 +39,7 @@
       <%= f.label :pottery %>
       <%= f.number_field :pottery, in: 1..9, class: 'form-control' %>
 
-      <%= f.label :creative_arts %>
+      <%= f.label :puppets_and_drama %>
       <%= f.number_field :arts, in: 1..9, class: 'form-control' %>
 
       <%= f.label :percussion %>
@@ -53,6 +53,30 @@
 
       <%= f.label :guitars %>
       <%= f.number_field :guitars, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :choir %>
+      <%= f.number_field :choir, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :creative_writing %>
+      <%= f.number_field :writing, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :finger_weaving %>
+      <%= f.number_field :weaving, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :interpretive_movement %>
+      <%= f.number_field :notdance, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :painting %>
+      <%= f.number_field :painting, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :sign_language %>
+      <%= f.number_field :sign, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :spanish %>
+      <%= f.number_field :spanish, in: 1..9, class: 'form-control' %>
+
+      <%= f.label :talking_with_missionary %>
+      <%= f.number_field :talking, in: 1..9, class: 'form-control' %>
       
       <%= f.submit "Add Camper", class: "btn btn-primary" %>
     <% end %>

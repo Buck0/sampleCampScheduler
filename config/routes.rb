@@ -24,6 +24,15 @@ Rails.application.routes.draw do
   delete '/disintigrate', to: 'campers#disintigrate'
   delete '/destroy', to: 'campers#destroy'
   
+  get '/trial', to: 'campers#trial'
+  post '/trial', to: 'campers#make'
+  get '/make', to: 'campers#make'
+  
+  get '/campers/:id/assign', to: 'campers#assign', as: 'assign_camper'
+  post '/campers/:id/assign', to: 'campers#set', as: 'set_camper'
+  
+  #get '/assign', to: 'campers#assign'
+  
   root 'sessions#new'
   
   #root 'static_pages#home'

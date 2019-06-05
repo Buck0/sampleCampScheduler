@@ -1,12 +1,281 @@
 class CampersController < ApplicationController
  # MAJOR ERROR IF THE SERVER RESTARTS, THE VARIABLES ARE NO LONGER DEFINED**********
- # PLEASE FIX IF POSSIBLE***********************************************************
+ # PLEASE FIX IF POSSIBLE BUT PROBABLY NON ISSUE ON HEROKU**************************
+ 
+ $archery = Array.new
+ $riflery = Array.new
+ $canoeing = Array.new
+ $baking = Array.new
+ $camping = Array.new
+ $rocks = Array.new
+ $fishing = Array.new
+ $hiking = Array.new
+ $pottery = Array.new
+ $arts = Array.new
+ $percussion = Array.new
+ $crafts = Array.new
+ $games = Array.new
+ $guitars = Array.new
+ 
+ $choir = Array.new
+ $writing = Array.new
+ $weaving = Array.new
+ $notdance = Array.new
+ $painting = Array.new
+ $sign = Array.new
+ $spanish = Array.new
+ $talking = Array.new
+ $un = Array.new
+ 
+ $isArch = String.new
+ $isRif = String.new
+ $isCan = String.new
+ $isBake = String.new
+ $isCamp = String.new
+ $isRock = String.new
+ $isFish = String.new
+ $isHike = String.new
+ $isPot = String.new
+ $isArt = String.new
+ $isPer = String.new
+ $isCraft = String.new
+ $isGame = String.new
+ $isGuit = String.new
+     
+ $isChoir = String.new
+ $isWrite = String.new
+ $isWeave = String.new
+ $isNotdance = String.new
+ $isPaint = String.new
+ $isSign = String.new
+ $isSpan = String.new
+ $isTalk = String.new
+ 
+ def assign
+   @camper = Camper.find(params[:id])
+   
+   
+   @archery = $archery
+   @riflery = $riflery
+   @canoeing = $canoeing
+   @baking = $baking
+   @camping = $camping
+   @rocks = $rocks
+   @fishing = $fishing
+   @hiking = $hiking
+   @pottery = $pottery
+   @arts = $arts
+   @percussion = $percussion
+   @crafts = $crafts
+   @games = $games
+   @guitars = $guitars
+   @un = $un
+   
+   @choir = $choir
+   @writing = $writing
+   @weaving = $weaving
+   @notdance = $notdance
+   @painting = $painting
+   @sign = $sign
+   @spanish = $spanish
+   @talking = $talking
+   
+   @isArch = $isArch
+   @isRif = $isRif
+   @isCan = $isCan
+   @isBake = $isBake
+   @isCamp = $isCamp
+   @isRock = $isRock
+   @isFish = $isFish
+   @isHike = $isHike
+   @isPot = $isPot
+   @isArt = $isArt
+   @isPer = $isPer
+   @isCraft = $isCraft
+   @isGame = $isGame
+   @isGuit = $isGuit
+   
+   @isChoir = $isChoir
+   @isWrite = $isWrite
+   @isWeave = $isWeave
+   @isNotdance = $isNotdance
+   @isPaint = $isPaint
+   @isSign = $isSign
+   @isSpan = $isSpan
+   @isTalk = $isTalk
+   
+ end
+ 
+ def set
+   @camper = Camper.find(params[:id])
+
+   if params[:assign][:archery] == "1"
+      @camper.update_attribute(:isArch, true)
+      $archery << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:riflery] == "1"
+      @camper.update_attribute(:isRif, true)
+      $riflery << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:canoeing] == "1"
+      @camper.update_attribute(:isCan, true)
+      $canoeing << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:baking] == "1"
+      @camper.update_attribute(:isBake, true)
+      $baking << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:camping] == "1"
+      @camper.update_attribute(:isCamp, true)
+      $camping << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:rocks] == "1"
+      @camper.update_attribute(:isRock, true)
+      $rocks << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:fishing] == "1"
+      @camper.update_attribute(:isFish, true)
+      $fishing << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:hiking] == "1"
+      @camper.update_attribute(:isHike, true)
+      $hiking << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:pottery] == "1"
+      @camper.update_attribute(:isPot, true)
+      $pottery << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:arts] == "1"
+      @camper.update_attribute(:isArt, true)
+      $arts << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:percussion] == "1"
+      @camper.update_attribute(:isPer, true)
+      $percussion << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:crafts] == "1"
+      @camper.update_attribute(:isCraft, true)
+      $crafts << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:games] == "1"
+      @camper.update_attribute(:isGame, true)
+      $games << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:guitars] == "1"
+      @camper.update_attribute(:isGuit, true)
+      $guitars << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:choir] == "1"
+      @camper.update_attribute(:isChoir, true)
+      $choir << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:writing] == "1"
+      @camper.update_attribute(:isWrite, true)
+      $writing << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:weaving] == "1"
+      @camper.update_attribute(:isWeave, true)
+      $weaving << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:notdance] == "1"
+      @camper.update_attribute(:isNotdance, true)
+      $notdance << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:painting] == "1"
+      @camper.update_attribute(:isPaint, true)
+      $painting << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:sign] == "1"
+      @camper.update_attribute(:isSign, true)
+      $sign << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:spanish] == "1"
+      @camper.update_attribute(:isSpan, true)
+      $spanish << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+      
+    elsif params[:assign][:talking] == "1"
+      @camper.update_attribute(:isTalk, true)
+      $talking << @camper
+      $un.delete_at($un.index(@camper))
+      flash[:success] = "Camper assigned"
+      redirect_to '/make'
+   else
+      flash[:warning] = "No activity was selected, please selecte an activity"
+      render 'assign'
+   end
+ end
+ 
  def reset
    @all = Camper.all
    
    @all.each do |all|
      all.update_attributes(isArch: false, isRif: false, isCan: false, isBake: false, isCamp: false, isRock: false, isFish: false,
-                            isHike: false, isPot: false, isArt: false, isPer: false, isCraft: false, isGame: false, isGuit: false)
+                            isHike: false, isPot: false, isArt: false, isPer: false, isCraft: false, isGame: false, isGuit: false,
+                            isChoir: false, isWrite: false, isWeave: false, isNotdance: false, isPaint: false, isSign: false,
+                            isSpan: false, isTalk: false)
                             
    end
    
@@ -17,7 +286,7 @@ class CampersController < ApplicationController
  def disintigrate
    Camper.delete_all
    if Camper.any?
-     flash[:warning] = "Something went wrong"
+     flash[:warning] = "Something went wrong please try again"
    else
     flash[:success] = "The list of campers has been deleted"
    end
@@ -28,6 +297,1246 @@ class CampersController < ApplicationController
   Camper.find(params[:id]).destroy
     flash[:success] = "Camper deleted"
     redirect_to campers_all_path
+ end
+ 
+ def trial
+   if !logged_in?
+      redirect_to login_path
+      flash[:danger] = 'Please Login to use Admin Functions'
+   end
+   
+   if !Camper.any?
+      flash[:warning] = "There are no campers to schedule"
+      redirect_to admin_path
+   end
+   #@activities = { :archery => 0, :riflery => 0, :canoeing => 0, :baking => 0, :camping => 0, :rocks => 0, :fishing => 0,
+     #               :hiking => 0, :pottery => 0, :arts => 0, :percussion => 0, :crafts => 0, :games => 0, :guitars => 0 }
+ end
+ 
+ def make
+   # make the trial schedule here based on the :activities thing from the post
+   # each section may need a unique page so that things don't get overwritten
+   # this would also require unique varibles for each time slot
+   # for now that isn't needed so copypasta the code from 1 down to 5
+   
+   @all = Camper.all
+   
+   @archery = Array.new
+   @riflery = Array.new
+   @canoeing = Array.new
+   @baking = Array.new
+   @camping = Array.new
+   @rocks = Array.new
+   @fishing = Array.new
+   @hiking = Array.new
+   @pottery = Array.new
+   @arts = Array.new
+   @percussion = Array.new
+   @crafts = Array.new
+   @games = Array.new
+   @guitars = Array.new
+   @un = Array.new
+   
+   @choir = Array.new
+   @writing = Array.new
+   @weaving = Array.new
+   @notdance = Array.new
+   @painting = Array.new
+   @sign = Array.new
+   @spanish = Array.new
+   @talking = Array.new
+   
+   if !params[:activities]
+     
+     @all = Camper.all
+   
+     @archery = $archery
+     @riflery = $riflery
+     @canoeing = $canoeing
+     @baking = $baking
+     @camping = $camping
+     @rocks = $rocks
+     @fishing = $fishing
+     @hiking = $hiking
+     @pottery = $pottery
+     @arts = $arts
+     @percussion = $percussion
+     @crafts = $crafts
+     @games = $games
+     @guitars = $guitars
+     @un = $un
+   
+     @choir = $choir
+     @writing = $writing
+     @weaving = $weaving
+     @notdance = $notdance
+     @painting = $painting
+     @sign = $sign
+     @spanish = $spanish
+     @talking = $talking 
+
+   elsif params[:activities][:slot] == "1"
+     i = 1
+      @all.each do |all|
+        
+        # Beginning of conditionals that determine where a camper gets put in the schedule
+        if all.archery != 9 && all.archery <= i && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+          all.update_attribute(:isArch, true)
+          @archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery <= i && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+          all.update_attribute(:isRif, true)
+          @riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing <= i && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+          all.update_attribute(:isCan, true)
+          @canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+          all.update_attribute(:isBake, true)
+          @baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+          all.update_attribute(:isCamp, true)
+          @camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+          all.update_attribute(:isRock, true)
+          @rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing <= i && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+          all.update_attribute(:isFish, true)
+          @fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking <= i && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+          all.update_attribute(:isHike, true)
+          @hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery <= i && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+          all.update_attribute(:isPot, true)
+          @pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts <= i && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+          all.update_attribute(:isArt, true)
+          @arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion <= i && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+          all.update_attribute(:isPer, true)
+          @percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts <= i && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+          all.update_attribute(:isCraft, true)
+          @crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games <= i && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+          all.update_attribute(:isGame, true)
+          @games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars <= i && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+          all.update_attribute(:isGuit, true)
+          @guitars << all
+          #next
+          
+        elsif all.choir != 9 && all.choir <= i && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+          all.update_attribute(:isChoir, true)
+          @choir << all
+          
+        elsif all.writing != 9 && all.writing <= i && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+          all.update_attribute(:isWrite, true)
+          @writing << all
+          
+        elsif all.weaving != 9 && all.weaving <= i && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+          all.update_attribute(:isWeave, true)
+          @weaving << all
+          
+        elsif all.notdance != 9 && all.notdance <= i && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+          all.update_attribute(:isNotdance, true)
+          @notdance << all
+          
+        elsif all.painting != 9 && all.painting <= i && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+          all.update_attribute(:isPaint, true)
+          @painting << all
+          
+        elsif all.sign != 9 && all.sign <= i && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+          all.update_attribute(:isSign, true)
+          @sign << all
+          
+        elsif all.spanish != 9 && all.spanish <= i && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+          all.update_attribute(:isSpan, true)
+          @spanish << all
+          
+        elsif all.talking != 9 && all.talking <= i && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+          all.update_attribute(:isTalk, true)
+          @talking << all
+          
+          # This next section will use the camper's optional activities if they could not get assigned on one of their main activities
+          
+        elsif all.archery != 9 && all.archery > 5 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+          all.update_attribute(:isArch, true)
+          @archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery > 5 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+          all.update_attribute(:isRif, true)
+          @riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing > 5 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+          all.update_attribute(:isCan, true)
+          @canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+          all.update_attribute(:isBake, true)
+          @baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+          all.update_attribute(:isCamp, true)
+          @camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+          all.update_attribute(:isRock, true)
+          @rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing > 5 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+          all.update_attribute(:isFish, true)
+          @fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking > 5 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+          all.update_attribute(:isHike, true)
+          @hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery > 5 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+          all.update_attribute(:isPot, true)
+          @pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts > 5 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+          all.update_attribute(:isArt, true)
+          @arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion > 5 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+          all.update_attribute(:isPer, true)
+          @percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts > 5 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+          all.update_attribute(:isCraft, true)
+          @crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games > 5 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+          all.update_attribute(:isGame, true)
+          @games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars > 5 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+          all.update_attribute(:isGuit, true)
+          @guitars << all
+          #next
+          
+        elsif all.choir != 9 && all.choir > 5 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+          all.update_attribute(:isChoir, true)
+          @choir << all
+          
+        elsif all.writing != 9 && all.writing > 5 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+          all.update_attribute(:isWrite, true)
+          @writing << all
+          
+        elsif all.weaving != 9 && all.weaving > 5 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+          all.update_attribute(:isWeave, true)
+          @weaving << all
+          
+        elsif all.notdance != 9 && all.notdance > 5 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+          all.update_attribute(:isNotdance, true)
+          @notdance << all
+          
+        elsif all.painting != 9 && all.painting > 5 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+          all.update_attribute(:isPaint, true)
+          @painting << all
+          
+        elsif all.sign != 9 && all.sign > 5 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+          all.update_attribute(:isSign, true)
+          @sign << all
+          
+        elsif all.spanish != 9 && all.spanish > 5 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+          all.update_attribute(:isSpan, true)
+          @spanish << all
+          
+        elsif all.talking != 9 && all.talking > 5 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+          all.update_attribute(:isTalk, true)
+          @talking << all
+          
+        else
+          # The camper is added to the $un array, indicating an unassigned camper
+          @un << all
+        end
+        
+      end  
+      
+     
+   elsif params[:activities][:slot] == "2"
+    i = 2
+      @all.each do |all|
+        
+        # Beginning of conditionals that determine where a camper gets put in the schedule
+        if all.archery != 9 && all.archery <= i && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+          all.update_attribute(:isArch, true)
+          @archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery <= i && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+          all.update_attribute(:isRif, true)
+          @riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing <= i && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+          all.update_attribute(:isCan, true)
+          @canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+          all.update_attribute(:isBake, true)
+          @baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+          all.update_attribute(:isCamp, true)
+          @camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+          all.update_attribute(:isRock, true)
+          @rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing <= i && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+          all.update_attribute(:isFish, true)
+          @fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking <= i && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+          all.update_attribute(:isHike, true)
+          @hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery <= i && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+          all.update_attribute(:isPot, true)
+          @pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts <= i && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+          all.update_attribute(:isArt, true)
+          @arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion <= i && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+          all.update_attribute(:isPer, true)
+          @percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts <= i && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+          all.update_attribute(:isCraft, true)
+          @crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games <= i && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+          all.update_attribute(:isGame, true)
+          @games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars <= i && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+          all.update_attribute(:isGuit, true)
+          @guitars << all
+          #next
+          
+        elsif all.choir != 9 && all.choir <= i && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+          all.update_attribute(:isChoir, true)
+          @choir << all
+          
+        elsif all.writing != 9 && all.writing <= i && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+          all.update_attribute(:isWrite, true)
+          @writing << all
+          
+        elsif all.weaving != 9 && all.weaving <= i && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+          all.update_attribute(:isWeave, true)
+          @weaving << all
+          
+        elsif all.notdance != 9 && all.notdance <= i && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+          all.update_attribute(:isNotdance, true)
+          @notdance << all
+          
+        elsif all.painting != 9 && all.painting <= i && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+          all.update_attribute(:isPaint, true)
+          @painting << all
+          
+        elsif all.sign != 9 && all.sign <= i && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+          all.update_attribute(:isSign, true)
+          @sign << all
+          
+        elsif all.spanish != 9 && all.spanish <= i && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+          all.update_attribute(:isSpan, true)
+          @spanish << all
+          
+        elsif all.talking != 9 && all.talking <= i && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+          all.update_attribute(:isTalk, true)
+          @talking << all
+          
+          # This next section will use the camper's optional activities if they could not get assigned on one of their main activities
+          
+        elsif all.archery != 9 && all.archery > 5 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+          all.update_attribute(:isArch, true)
+          @archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery > 5 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+          all.update_attribute(:isRif, true)
+          @riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing > 5 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+          all.update_attribute(:isCan, true)
+          @canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+          all.update_attribute(:isBake, true)
+          @baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+          all.update_attribute(:isCamp, true)
+          @camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+          all.update_attribute(:isRock, true)
+          @rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing > 5 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+          all.update_attribute(:isFish, true)
+          @fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking > 5 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+          all.update_attribute(:isHike, true)
+          @hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery > 5 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+          all.update_attribute(:isPot, true)
+          @pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts > 5 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+          all.update_attribute(:isArt, true)
+          @arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion > 5 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+          all.update_attribute(:isPer, true)
+          @percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts > 5 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+          all.update_attribute(:isCraft, true)
+          @crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games > 5 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+          all.update_attribute(:isGame, true)
+          @games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars > 5 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+          all.update_attribute(:isGuit, true)
+          @guitars << all
+          #next
+          
+        elsif all.choir != 9 && all.choir > 5 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+          all.update_attribute(:isChoir, true)
+          @choir << all
+          
+        elsif all.writing != 9 && all.writing > 5 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+          all.update_attribute(:isWrite, true)
+          @writing << all
+          
+        elsif all.weaving != 9 && all.weaving > 5 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+          all.update_attribute(:isWeave, true)
+          @weaving << all
+          
+        elsif all.notdance != 9 && all.notdance > 5 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+          all.update_attribute(:isNotdance, true)
+          @notdance << all
+          
+        elsif all.painting != 9 && all.painting > 5 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+          all.update_attribute(:isPaint, true)
+          @painting << all
+          
+        elsif all.sign != 9 && all.sign > 5 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+          all.update_attribute(:isSign, true)
+          @sign << all
+          
+        elsif all.spanish != 9 && all.spanish > 5 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+          all.update_attribute(:isSpan, true)
+          @spanish << all
+          
+        elsif all.talking != 9 && all.talking > 5 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+          all.update_attribute(:isTalk, true)
+          @talking << all
+          
+        else
+          # The camper is added to the $un array, indicating an unassigned camper
+          @un << all
+        end
+        
+      end  
+   
+   elsif params[:activities][:slot] == "3"
+   
+    i = 3
+      @all.each do |all|
+        
+        # Beginning of conditionals that determine where a camper gets put in the schedule
+        if all.archery != 9 && all.archery <= i && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+          all.update_attribute(:isArch, true)
+          @archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery <= i && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+          all.update_attribute(:isRif, true)
+          @riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing <= i && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+          all.update_attribute(:isCan, true)
+          @canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+          all.update_attribute(:isBake, true)
+          @baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+          all.update_attribute(:isCamp, true)
+          @camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+          all.update_attribute(:isRock, true)
+          @rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing <= i && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+          all.update_attribute(:isFish, true)
+          @fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking <= i && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+          all.update_attribute(:isHike, true)
+          @hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery <= i && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+          all.update_attribute(:isPot, true)
+          @pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts <= i && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+          all.update_attribute(:isArt, true)
+          @arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion <= i && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+          all.update_attribute(:isPer, true)
+          @percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts <= i && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+          all.update_attribute(:isCraft, true)
+          @crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games <= i && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+          all.update_attribute(:isGame, true)
+          @games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars <= i && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+          all.update_attribute(:isGuit, true)
+          @guitars << all
+          #next
+          
+        elsif all.choir != 9 && all.choir <= i && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+          all.update_attribute(:isChoir, true)
+          @choir << all
+          
+        elsif all.writing != 9 && all.writing <= i && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+          all.update_attribute(:isWrite, true)
+          @writing << all
+          
+        elsif all.weaving != 9 && all.weaving <= i && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+          all.update_attribute(:isWeave, true)
+          @weaving << all
+          
+        elsif all.notdance != 9 && all.notdance <= i && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+          all.update_attribute(:isNotdance, true)
+          @notdance << all
+          
+        elsif all.painting != 9 && all.painting <= i && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+          all.update_attribute(:isPaint, true)
+          @painting << all
+          
+        elsif all.sign != 9 && all.sign <= i && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+          all.update_attribute(:isSign, true)
+          @sign << all
+          
+        elsif all.spanish != 9 && all.spanish <= i && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+          all.update_attribute(:isSpan, true)
+          @spanish << all
+          
+        elsif all.talking != 9 && all.talking <= i && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+          all.update_attribute(:isTalk, true)
+          @talking << all
+        
+          # This next section will use the camper's optional activities if they could not get assigned on one of their main activities
+          
+        elsif all.archery != 9 && all.archery > 5 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+          all.update_attribute(:isArch, true)
+          @archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery > 5 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+          all.update_attribute(:isRif, true)
+          @riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing > 5 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+          all.update_attribute(:isCan, true)
+          @canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+          all.update_attribute(:isBake, true)
+          @baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+          all.update_attribute(:isCamp, true)
+          @camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+          all.update_attribute(:isRock, true)
+          @rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing > 5 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+          all.update_attribute(:isFish, true)
+          @fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking > 5 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+          all.update_attribute(:isHike, true)
+          @hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery > 5 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+          all.update_attribute(:isPot, true)
+          @pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts > 5 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+          all.update_attribute(:isArt, true)
+          @arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion > 5 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+          all.update_attribute(:isPer, true)
+          @percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts > 5 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+          all.update_attribute(:isCraft, true)
+          @crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games > 5 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+          all.update_attribute(:isGame, true)
+          @games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars > 5 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+          all.update_attribute(:isGuit, true)
+          @guitars << all
+          #next
+          
+        elsif all.choir != 9 && all.choir > 5 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+          all.update_attribute(:isChoir, true)
+          @choir << all
+          
+        elsif all.writing != 9 && all.writing > 5 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+          all.update_attribute(:isWrite, true)
+          @writing << all
+          
+        elsif all.weaving != 9 && all.weaving > 5 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+          all.update_attribute(:isWeave, true)
+          @weaving << all
+          
+        elsif all.notdance != 9 && all.notdance > 5 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+          all.update_attribute(:isNotdance, true)
+          @notdance << all
+          
+        elsif all.painting != 9 && all.painting > 5 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+          all.update_attribute(:isPaint, true)
+          @painting << all
+          
+        elsif all.sign != 9 && all.sign > 5 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+          all.update_attribute(:isSign, true)
+          @sign << all
+          
+        elsif all.spanish != 9 && all.spanish > 5 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+          all.update_attribute(:isSpan, true)
+          @spanish << all
+          
+        elsif all.talking != 9 && all.talking > 5 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+          all.update_attribute(:isTalk, true)
+          @talking << all
+          
+        else
+          # The camper is added to the $un array, indicating an unassigned camper
+          @un << all
+        end
+        
+      end  
+   
+   elsif params[:activities][:slot] == "4"
+   
+    i = 4
+      @all.each do |all|
+        
+        # Beginning of conditionals that determine where a camper gets put in the schedule
+        if all.archery != 9 && all.archery <= i && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+          all.update_attribute(:isArch, true)
+          @archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery <= i && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+          all.update_attribute(:isRif, true)
+          @riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing <= i && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+          all.update_attribute(:isCan, true)
+          @canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+          all.update_attribute(:isBake, true)
+          @baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+          all.update_attribute(:isCamp, true)
+          @camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+          all.update_attribute(:isRock, true)
+          @rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing <= i && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+          all.update_attribute(:isFish, true)
+          @fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking <= i && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+          all.update_attribute(:isHike, true)
+          @hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery <= i && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+          all.update_attribute(:isPot, true)
+          @pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts <= i && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+          all.update_attribute(:isArt, true)
+          @arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion <= i && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+          all.update_attribute(:isPer, true)
+          @percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts <= i && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+          all.update_attribute(:isCraft, true)
+          @crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games <= i && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+          all.update_attribute(:isGame, true)
+          @games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars <= i && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+          all.update_attribute(:isGuit, true)
+          @guitars << all
+          #next
+          
+        elsif all.choir != 9 && all.choir <= i && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+          all.update_attribute(:isChoir, true)
+          @choir << all
+          
+        elsif all.writing != 9 && all.writing <= i && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+          all.update_attribute(:isWrite, true)
+          @writing << all
+          
+        elsif all.weaving != 9 && all.weaving <= i && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+          all.update_attribute(:isWeave, true)
+          @weaving << all
+          
+        elsif all.notdance != 9 && all.notdance <= i && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+          all.update_attribute(:isNotdance, true)
+          @notdance << all
+          
+        elsif all.painting != 9 && all.painting <= i && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+          all.update_attribute(:isPaint, true)
+          @painting << all
+          
+        elsif all.sign != 9 && all.sign <= i && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+          all.update_attribute(:isSign, true)
+          @sign << all
+          
+        elsif all.spanish != 9 && all.spanish <= i && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+          all.update_attribute(:isSpan, true)
+          @spanish << all
+          
+        elsif all.talking != 9 && all.talking <= i && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+          all.update_attribute(:isTalk, true)
+          @talking << all
+        
+          # This next section will use the camper's optional activities if they could not get assigned on one of their main activities
+          
+        elsif all.archery != 9 && all.archery > 5 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+          all.update_attribute(:isArch, true)
+          @archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery > 5 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+          all.update_attribute(:isRif, true)
+          @riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing > 5 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+          all.update_attribute(:isCan, true)
+          @canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+          all.update_attribute(:isBake, true)
+          @baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+          all.update_attribute(:isCamp, true)
+          @camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+          all.update_attribute(:isRock, true)
+          @rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing > 5 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+          all.update_attribute(:isFish, true)
+          @fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking > 5 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+          all.update_attribute(:isHike, true)
+          @hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery > 5 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+          all.update_attribute(:isPot, true)
+          @pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts > 5 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+          all.update_attribute(:isArt, true)
+          @arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion > 5 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+          all.update_attribute(:isPer, true)
+          @percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts > 5 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+          all.update_attribute(:isCraft, true)
+          @crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games > 5 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+          all.update_attribute(:isGame, true)
+          @games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars > 5 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+          all.update_attribute(:isGuit, true)
+          @guitars << all
+          #next
+          
+        elsif all.choir != 9 && all.choir > 5 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+          all.update_attribute(:isChoir, true)
+          @choir << all
+          
+        elsif all.writing != 9 && all.writing > 5 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+          all.update_attribute(:isWrite, true)
+          @writing << all
+          
+        elsif all.weaving != 9 && all.weaving > 5 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+          all.update_attribute(:isWeave, true)
+          @weaving << all
+          
+        elsif all.notdance != 9 && all.notdance > 5 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+          all.update_attribute(:isNotdance, true)
+          @notdance << all
+          
+        elsif all.painting != 9 && all.painting > 5 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+          all.update_attribute(:isPaint, true)
+          @painting << all
+          
+        elsif all.sign != 9 && all.sign > 5 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+          all.update_attribute(:isSign, true)
+          @sign << all
+          
+        elsif all.spanish != 9 && all.spanish > 5 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+          all.update_attribute(:isSpan, true)
+          @spanish << all
+          
+        elsif all.talking != 9 && all.talking > 5 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+          all.update_attribute(:isTalk, true)
+          @talking << all
+          
+        else
+          # The camper is added to the $un array, indicating an unassigned camper
+          @un << all
+        end
+        
+      end  
+   
+   elsif params[:activities][:slot] == "5"
+   
+    i = 5
+      @all.each do |all|
+        
+        # Beginning of conditionals that determine where a camper gets put in the schedule
+        if all.archery != 9 && all.archery <= i && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+          all.update_attribute(:isArch, true)
+          @archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery <= i && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+          all.update_attribute(:isRif, true)
+          @riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing <= i && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+          all.update_attribute(:isCan, true)
+          @canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+          all.update_attribute(:isBake, true)
+          @baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+          all.update_attribute(:isCamp, true)
+          @camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+          all.update_attribute(:isRock, true)
+          @rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing <= i && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+          all.update_attribute(:isFish, true)
+          @fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking <= i && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+          all.update_attribute(:isHike, true)
+          @hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery <= i && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+          all.update_attribute(:isPot, true)
+          @pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts <= i && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+          all.update_attribute(:isArt, true)
+          @arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion <= i && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+          all.update_attribute(:isPer, true)
+          @percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts <= i && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+          all.update_attribute(:isCraft, true)
+          @crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games <= i && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+          all.update_attribute(:isGame, true)
+          @games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars <= i && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+          all.update_attribute(:isGuit, true)
+          @guitars << all
+          #next
+        
+        elsif all.choir != 9 && all.choir <= i && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+          all.update_attribute(:isChoir, true)
+          @choir << all
+          
+        elsif all.writing != 9 && all.writing <= i && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+          all.update_attribute(:isWrite, true)
+          @writing << all
+          
+        elsif all.weaving != 9 && all.weaving <= i && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+          all.update_attribute(:isWeave, true)
+          @weaving << all
+          
+        elsif all.notdance != 9 && all.notdance <= i && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+          all.update_attribute(:isNotdance, true)
+          @notdance << all
+          
+        elsif all.painting != 9 && all.painting <= i && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+          all.update_attribute(:isPaint, true)
+          @painting << all
+          
+        elsif all.sign != 9 && all.sign <= i && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+          all.update_attribute(:isSign, true)
+          @sign << all
+          
+        elsif all.spanish != 9 && all.spanish <= i && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+          all.update_attribute(:isSpan, true)
+          @spanish << all
+          
+        elsif all.talking != 9 && all.talking <= i && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+          all.update_attribute(:isTalk, true)
+          @talking << all
+          
+          # This next section will use the camper's optional activities if they could not get assigned on one of their main activities
+          
+        elsif all.archery != 9 && all.archery > 5 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+          all.update_attribute(:isArch, true)
+          @archery << all
+          #all.isArch = true
+          #next
+          # instead of next, do else if so that the end of the thing can be used
+        elsif all.riflery != 9 && all.riflery > 5 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+          all.update_attribute(:isRif, true)
+          @riflery << all
+          #all.isRif = true
+          #next
+        elsif all.canoeing != 9 && all.canoeing > 5 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+          all.update_attribute(:isCan, true)
+          @canoeing << all
+          #all.isCan = true
+          #next
+        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+          all.update_attribute(:isBake, true)
+          @baking << all
+          #all.isBake = true
+          #next
+        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+          all.update_attribute(:isCamp, true)
+          @camping << all
+          #all.isCamp = true
+          #next
+        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+          all.update_attribute(:isRock, true)
+          @rocks << all
+          #all.isRock = true
+          #next
+        elsif all.fishing != 9 && all.fishing > 5 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+          all.update_attribute(:isFish, true)
+          @fishing << all
+          #all.isFish = true
+          #next
+        elsif all.hiking != 9 && all.hiking > 5 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+          all.update_attribute(:isHike, true)
+          @hiking << all
+          #all.isHike = true
+          #next
+        elsif all.pottery != 9 && all.pottery > 5 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+          all.update_attribute(:isPot, true)
+          @pottery << all
+          #all.isPot = true
+          #next
+        elsif all.arts != 9 && all.arts > 5 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+          all.update_attribute(:isArt, true)
+          @arts << all
+          #all.isArt = true
+          #next
+        elsif all.percussion != 9 && all.percussion > 5 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+          all.update_attribute(:isPer, true)
+          @percussion << all
+          #all.isPer = true
+          #next
+        elsif all.crafts != 9 && all.crafts > 5 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+          all.update_attribute(:isCraft, true)
+          @crafts << all
+          #all.isCraft = true
+          #next
+        elsif all.games != 9 && all.games > 5 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+          all.update_attribute(:isGame, true)
+          @games << all
+          #all.isGame = true
+          #next
+        elsif all.guitars != 9 && all.guitars > 5 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+          all.update_attribute(:isGuit, true)
+          @guitars << all
+          #next
+          
+        elsif all.choir != 9 && all.choir > 5 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+          all.update_attribute(:isChoir, true)
+          @choir << all
+          
+        elsif all.writing != 9 && all.writing > 5 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+          all.update_attribute(:isWrite, true)
+          @writing << all
+          
+        elsif all.weaving != 9 && all.weaving > 5 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+          all.update_attribute(:isWeave, true)
+          @weaving << all
+          
+        elsif all.notdance != 9 && all.notdance > 5 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+          all.update_attribute(:isNotdance, true)
+          @notdance << all
+          
+        elsif all.painting != 9 && all.painting > 5 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+          all.update_attribute(:isPaint, true)
+          @painting << all
+          
+        elsif all.sign != 9 && all.sign > 5 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+          all.update_attribute(:isSign, true)
+          @sign << all
+          
+        elsif all.spanish != 9 && all.spanish > 5 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+          all.update_attribute(:isSpan, true)
+          @spanish << all
+          
+        elsif all.talking != 9 && all.talking > 5 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+          all.update_attribute(:isTalk, true)
+          @talking << all
+          
+        else
+          # The camper is added to the $un array, indicating an unassigned camper
+          @un << all
+        end
+        
+      end  
+   
+   else
+     flash[:danger] = "The time slot was not 1-5, it was \"#{params[:activities][:slot]}\""
+     redirect_to trial_path
+   end
+   
+   if params[:activities]
+     $archery = @archery
+     $riflery = @riflery
+     $canoeing = @canoeing
+     $baking = @baking
+     $camping = @camping
+     $rocks = @rocks
+     $fishing = @fishing
+     $hiking = @hiking
+     $pottery = @pottery
+     $arts = @arts
+     $percussion = @percussion
+     $crafts = @crafts
+     $games = @games
+     $guitars = @guitars
+     $un = @un
+     $slot = params[:activities][:slot]
+     
+     $choir = @choir
+     $writing = @writing
+     $weaving = @weaving
+     $notdance = @notdance
+     $painting = @painting
+     $sign = @sign
+     $spanish = @spanish
+     $talking = @talking
+     
+     $isArch = params[:activities][:archery]
+     $isRif = params[:activities][:riflery]
+     $isCan = params[:activities][:canoeing]
+     $isBake = params[:activities][:baking]
+     $isCamp = params[:activities][:camping]
+     $isRock = params[:activities][:rocks]
+     $isFish = params[:activities][:fishing]
+     $isHike = params[:activities][:hiking]
+     $isPot = params[:activities][:pottery]
+     $isArt = params[:activities][:arts]
+     $isPer = params[:activities][:percussion]
+     $isCraft = params[:activities][:crafts]
+     $isGame = params[:activities][:games]
+     $isGuit = params[:activities][:guitars]
+     
+     $isChoir = params[:activities][:choir]
+     $isWrite = params[:activities][:writing]
+     $isWeave = params[:activities][:weaving]
+     $isNotdance = params[:activities][:notdance]
+     $isPaint = params[:activities][:painting]
+     $isSign = params[:activities][:sign]
+     $isSpan = params[:activities][:spanish]
+     $isTalk = params[:activities][:talking]
+     
+   end
+   
  end
  
   def schedule
@@ -197,9 +1706,8 @@ class CampersController < ApplicationController
     
     for i in 1..5
       @all.each do |all|
-        # OLD COMMENT BELOW NEEDS REDACTING
-        # if a kid gets skipped for one then they'll continually get skipped if they dont get precidence *****
-        # this actually shouldn't happen since the kids that are technically "in front" of them have had their turn by the next slot
+        
+        # Beginning of conditionals that determine where a camper gets put in the schedule
         if all.archery != 9 && all.archery <= i && !all.isArch && $archery.size < i * 16
           all.update_attribute(:isArch, true)
           $archery << all
@@ -271,7 +1779,7 @@ class CampersController < ApplicationController
           $guitars << all
           #next
           
-          # This next section will use the camper's optional activites if they could not get assigned on one of their main activities
+          # This next section will use the camper's optional activities if they could not get assigned on one of their main activities
           
         elsif all.archery != 9 && all.archery > 5 && !all.isArch && $archery.size < i * 16
           all.update_attribute(:isArch, true)

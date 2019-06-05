@@ -37,7 +37,7 @@
 <% end %>
 
 <% if @camper.arts != nil && @camper.arts != "" && @camper.arts != 9 %>
-<h3><%= @camper.arts %> &nbsp; &nbsp;&nbsp;&nbsp;Arts</h3>
+<h3><%= @camper.arts %> &nbsp; &nbsp;&nbsp;&nbsp;Puppets/Drama</h3>
 <% end %>
 
 <% if @camper.percussion != nil && @camper.percussion != "" && @camper.percussion != 9 %>
@@ -54,6 +54,38 @@
 
 <% if @camper.guitars != nil && @camper.guitars != ""  && @camper.guitars != 9 %>
 <h3><%= @camper.guitars %> &nbsp; &nbsp;&nbsp;&nbsp;Guitars</h3>
+<% end %>
+
+<% if @camper.choir != nil && @camper.choir != "" && @camper.choir != 9 %>
+<h3><%= @camper.choir %> &nbsp; &nbsp;&nbsp;&nbsp;Choir</h3>
+<% end %>
+
+<% if @camper.writing != nil && @camper.writing != "" && @camper.writing != 9 %>
+<h3><%= @camper.writing %> &nbsp; &nbsp;&nbsp;&nbsp;Writing</h3>
+<% end %>
+
+<% if @camper.weaving != nil && @camper.weaving != "" && @camper.weaving != 9 %>
+<h3><%= @camper.weaving %> &nbsp; &nbsp;&nbsp;&nbsp;Finger weaving</h3>
+<% end %>
+
+<% if @camper.notdance != nil && @camper.notdance != "" && @camper.notdance != 9 %>
+<h3><%= @camper.notdance %> &nbsp; &nbsp;&nbsp;&nbsp;Interpretive Movement</h3>
+<% end %>
+
+<% if @camper.painting != nil && @camper.painting != "" && @camper.painting != 9 %>
+<h3><%= @camper.painting %> &nbsp; &nbsp;&nbsp;&nbsp;Painting</h3>
+<% end %>
+
+<% if @camper.sign != nil && @camper.sign != "" && @camper.sign != 9 %>
+<h3><%= @camper.sign %> &nbsp; &nbsp;&nbsp;&nbsp;Sign Language</h3>
+<% end %>
+
+<% if @camper.spanish != nil && @camper.spanish != "" && @camper.spanish != 9 %>
+<h3><%= @camper.spanish %> &nbsp; &nbsp;&nbsp;&nbsp;Spanish</h3>
+<% end %>
+
+<% if @camper.talking != nil && @camper.talking != "" && @camper.talking != 9 %>
+<h3><%= @camper.talking %> &nbsp; &nbsp;&nbsp;&nbsp;Talking with Missionary</h3>
 <% end %>
 
 <%= link_to "Edit", edit_camper_path(@camper), class: "btn btn-primary" %>
