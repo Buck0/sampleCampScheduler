@@ -373,7 +373,33 @@ class CampersController < ApplicationController
      @painting = $painting
      @sign = $sign
      @spanish = $spanish
-     @talking = $talking 
+     @talking = $talking
+     
+     params[:activities][:slot] = $slot
+     params[:activities][:archery] = $isArch
+     params[:activities][:riflery] = $isRif
+     params[:activities][:canoeing] = $isCan
+     params[:activities][:baking] = $isBake
+     params[:activities][:camping] = $isCamp
+     params[:activities][:rocks] = $isRock
+     params[:activities][:fishing] = $isFish
+     params[:activities][:hiking] = $isHike
+     params[:activities][:pottery] = $isPot
+     params[:activities][:arts] = $isArt
+     params[:activities][:percussion] = $isPer
+     params[:activities][:crafts] = $isCraft
+     params[:activities][:games] = $isGame
+     params[:activities][:guitars] = $isGuit
+     
+     params[:activities][:choir] = $isChoir
+     params[:activities][:writing] = $isWrite
+     params[:activities][:weaving] = $isWeave
+     params[:activities][:notdance] = $isNotdance
+     params[:activities][:painting] = $isPaint
+     params[:activities][:sign] = $isSign
+     params[:activities][:spanish] = $isSpan
+     params[:activities][:talking] = $isTalk
+     
 
    elsif params[:activities][:slot] == "1"
      i = 1
@@ -1484,7 +1510,7 @@ class CampersController < ApplicationController
      redirect_to trial_path
    end
    
-   if params[:activities]
+   if params[:activities] != nil
      $archery = @archery
      $riflery = @riflery
      $canoeing = @canoeing
