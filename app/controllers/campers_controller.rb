@@ -346,7 +346,7 @@ class CampersController < ApplicationController
    @spanish = Array.new
    @talking = Array.new
    
-   if !params[:activities]
+   if !params[:activities] || params[:activities] == nil
      
      @all = Camper.all
    
