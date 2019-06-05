@@ -1477,58 +1477,6 @@ class CampersController < ApplicationController
           @un << all
         end
         
-        if params[:activities]
-         $archery = @archery
-         $riflery = @riflery
-         $canoeing = @canoeing
-         $baking = @baking
-         $camping = @camping
-         $rocks = @rocks
-         $fishing = @fishing
-         $hiking = @hiking
-         $pottery = @pottery
-         $arts = @arts
-         $percussion = @percussion
-         $crafts = @crafts
-         $games = @games
-         $guitars = @guitars
-         $un = @un
-         $slot = params[:activities][:slot]
-     
-         $choir = @choir
-         $writing = @writing
-         $weaving = @weaving
-         $notdance = @notdance
-         $painting = @painting
-         $sign = @sign
-         $spanish = @spanish
-         $talking = @talking
-     
-         $isArch = params[:activities][:archery]
-         $isRif = params[:activities][:riflery]
-         $isCan = params[:activities][:canoeing]
-         $isBake = params[:activities][:baking]
-         $isCamp = params[:activities][:camping]
-         $isRock = params[:activities][:rocks]
-         $isFish = params[:activities][:fishing]
-         $isHike = params[:activities][:hiking]
-         $isPot = params[:activities][:pottery]
-         $isArt = params[:activities][:arts]
-         $isPer = params[:activities][:percussion]
-         $isCraft = params[:activities][:crafts]
-         $isGame = params[:activities][:games]
-         $isGuit = params[:activities][:guitars]
-     
-         $isChoir = params[:activities][:choir]
-         $isWrite = params[:activities][:writing]
-         $isWeave = params[:activities][:weaving]
-         $isNotdance = params[:activities][:notdance]
-         $isPaint = params[:activities][:painting]
-         $isSign = params[:activities][:sign]
-         $isSpan = params[:activities][:spanish]
-         $isTalk = params[:activities][:talking]
-     
-        end
       end  
    
    else
@@ -1536,6 +1484,58 @@ class CampersController < ApplicationController
      redirect_to trial_path
    end
    
+   if params[:activities]
+     $archery = @archery
+     $riflery = @riflery
+     $canoeing = @canoeing
+     $baking = @baking
+     $camping = @camping
+     $rocks = @rocks
+     $fishing = @fishing
+     $hiking = @hiking
+     $pottery = @pottery
+     $arts = @arts
+     $percussion = @percussion
+     $crafts = @crafts
+     $games = @games
+     $guitars = @guitars
+     $un = @un
+     $slot = params[:activities][:slot]
+     
+     $choir = @choir
+     $writing = @writing
+     $weaving = @weaving
+     $notdance = @notdance
+     $painting = @painting
+     $sign = @sign
+     $spanish = @spanish
+     $talking = @talking
+     
+     $isArch = params[:activities][:archery]
+     $isRif = params[:activities][:riflery]
+     $isCan = params[:activities][:canoeing]
+     $isBake = params[:activities][:baking]
+     $isCamp = params[:activities][:camping]
+     $isRock = params[:activities][:rocks]
+     $isFish = params[:activities][:fishing]
+     $isHike = params[:activities][:hiking]
+     $isPot = params[:activities][:pottery]
+     $isArt = params[:activities][:arts]
+     $isPer = params[:activities][:percussion]
+     $isCraft = params[:activities][:crafts]
+     $isGame = params[:activities][:games]
+     $isGuit = params[:activities][:guitars]
+     
+     $isChoir = params[:activities][:choir]
+     $isWrite = params[:activities][:writing]
+     $isWeave = params[:activities][:weaving]
+     $isNotdance = params[:activities][:notdance]
+     $isPaint = params[:activities][:painting]
+     $isSign = params[:activities][:sign]
+     $isSpan = params[:activities][:spanish]
+     $isTalk = params[:activities][:talking]
+     
+   end
    
  end
  
