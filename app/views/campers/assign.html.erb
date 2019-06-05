@@ -101,6 +101,9 @@
     <%= form_for(:assign, url: set_camper_path(@camper)) do |f| %>
       
       <% if @isArch != "1" %>
+        <% if @isArch == nil %>
+          <%= "Its nil" %>
+        <% end %>
         <%= "Archery is off today" %>
       <% elsif @archery.size < 16 %>
         <%= f.label :archery, :class => "checkbox inline" do %>

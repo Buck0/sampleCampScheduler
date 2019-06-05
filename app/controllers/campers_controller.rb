@@ -264,7 +264,7 @@ class CampersController < ApplicationController
       redirect_to '/make'
    else
       flash[:warning] = "No activity was selected, please selecte an activity"
-      render 'assign'
+      render '/assign'
    end
  end
  
