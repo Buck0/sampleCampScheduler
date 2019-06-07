@@ -11,4 +11,8 @@ class StaticPagesController < ApplicationController
       flash[:danger] = 'Please Login to use Admin Functions'
     end
   end
+  
+  def patch_notes
+  end
+  
 end

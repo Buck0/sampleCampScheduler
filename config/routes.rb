@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/help', to: 'static_pages#help'
   
-  get '/admin', to: 'static_pages#admin'
+  get '/home', to: 'static_pages#admin', as: 'admin'
   
   #root 'static_pages#admin'
   
@@ -24,12 +24,14 @@ Rails.application.routes.draw do
   delete '/disintigrate', to: 'campers#disintigrate'
   delete '/destroy', to: 'campers#destroy'
   
-  get '/trial', to: 'campers#trial'
-  post '/trial', to: 'campers#make'
-  get '/make', to: 'campers#make'
+  get '/make', to: 'campers#trial', as: 'trial'
+  #post '/trial', to: 'campers#make'
+  #get '/make', to: 'campers#make'
   
   post '/doit', to: 'campers#doit'
   get '/better', to: 'campers#better'
+  
+  get '/patch_notes', to: 'static_pages#patch_notes'
   
   get '/campers/:id/assign', to: 'campers#assign', as: 'assign_camper'
   post '/campers/:id/assign', to: 'campers#set', as: 'set_camper'

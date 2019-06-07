@@ -3,6 +3,10 @@ class SessionsController < ApplicationController
     if !User.any?
       redirect_to new_user_path
     else
+      if logged_in?
+        redirect_to admin_path
+        flash[:warning] = "Already logged in"
+      end
     end
   end
 
