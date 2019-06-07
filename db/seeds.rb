@@ -33,7 +33,7 @@ Un.create!
 
 Schedule.create!
 
-
+=begin
 99.times do |n|
   num = (n % 7) + 1
   num2 = ((num + 1) % 7) + 1
@@ -52,4 +52,4 @@ Schedule.create!
                  percussion: num6,
                  hiking:     num7)
 end
-
+=end
