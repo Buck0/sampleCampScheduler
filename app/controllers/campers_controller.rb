@@ -2083,9 +2083,9 @@ class CampersController < ApplicationController
   
   def doit
    # ok so here is where the magic happens
-   # i need to make all of this change to act_rec objects and hope it works
-   # when making a new schedule it should delete the current list of the activity
-   # possibly make more act_rec objs to track the open items
+   # i need to make all of this change to act_rec objects and hope it works (it did)
+   # when making a new schedule it should delete the current list of the activities (it does)
+   # possibly make more act_rec objs to track the open items (I did, it works)
 
    @all = Camper.all
    
@@ -2115,37 +2115,12 @@ class CampersController < ApplicationController
    
    Un.first.update_attribute(:list, ["init"])
    
+   # Everything is on by default
    Schedule.first.update_attributes(slot: 0, isArch: true, isRif: true, isCan: true, isBake: true, isCamp: true, isRock: true, 
                                     isFish: true, isHike: true, isPot: true, isArt: true, isPer: true, isCraft: true, isGame: true,
                                     isGuit: true, isChoir: true, isWrite: true, isWeave: true, isNotdance: true, isPaint: true, 
                                     isSign: true, isSpan: true, isTalk: true)
    
-=begin
-   @archery = Archery.first
-   @riflery = Riflery.first
-   @canoeing = Canoeing.first
-   @baking = Baking.first
-   @camping = Camping.first
-   @rocks = Rock.first
-   @fishing = Fishing.first
-   @hiking = Hiking.first
-   @pottery = Pottery.first
-   @arts = Art.first
-   @percussion = Percussion.first
-   @crafts = Craft.first
-   @games = Game.first
-   @guitars = Guitar.first
-   @un = Un.first
-   
-   @choir = Choir.first
-   @writing = Writing.first
-   @weaving = Weaving.first
-   @notdance = Notdance.first
-   @painting = Painting.first
-   @sign = Sign.first
-   @spanish = Spanish.first
-   @talking = Talking.first
-=end
 
    @archery = Array.new
    @riflery = Array.new
@@ -2174,7 +2149,7 @@ class CampersController < ApplicationController
      
 
    if !params[:activities] || params[:activities] == "" || params[:activities] == nil
-     flash[:warning] = "Something went wrong at line 2106"
+     flash[:warning] = "Something went wrong (at line 2152), nothing was scheduled. Please try again and contact Matthew at mdbuchanan0@gmail.com about this issue"
      redirect_to admin_path and return
    elsif params[:activities][:slot] == "1"
      i = 1
@@ -2286,106 +2261,106 @@ class CampersController < ApplicationController
           
           # This next section will use the camper's optional activities if they could not get assigned on one of their main activities
           
-        elsif all.archery != 9 && all.archery > 5 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+        elsif all.archery != 9 && all.archery > 3 && all.archery < 6 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
           all.update_attribute(:isArch, true)
           @archery << all.name
           #all.isArch = true
           #next
           # instead of next, do else if so that the end of the thing can be used
-        elsif all.riflery != 9 && all.riflery > 5 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+        elsif all.riflery != 9 && all.riflery > 3 && all.riflery < 6 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
           all.update_attribute(:isRif, true)
           @riflery << all.name
           #all.isRif = true
           #next
-        elsif all.canoeing != 9 && all.canoeing > 5 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+        elsif all.canoeing != 9 && all.canoeing > 3 && all.canoeing < 6 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
           all.update_attribute(:isCan, true)
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking > 3 && all.baking < 6 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 3 && all.camping < 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks > 3 && all.rocks < 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
           #next
-        elsif all.fishing != 9 && all.fishing > 5 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+        elsif all.fishing != 9 && all.fishing > 3 && all.fishing < 6 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
           all.update_attribute(:isFish, true)
           @fishing << all.name
           #all.isFish = true
           #next
-        elsif all.hiking != 9 && all.hiking > 5 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+        elsif all.hiking != 9 && all.hiking > 3 && all.hiking < 6 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
           all.update_attribute(:isHike, true)
           @hiking << all.name
           #all.isHike = true
           #next
-        elsif all.pottery != 9 && all.pottery > 5 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+        elsif all.pottery != 9 && all.pottery > 3 && all.pottery < 6 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
           all.update_attribute(:isPot, true)
           @pottery << all.name
           #all.isPot = true
           #next
-        elsif all.arts != 9 && all.arts > 5 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+        elsif all.arts != 9 && all.arts > 3 && all.arts < 6 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
           all.update_attribute(:isArt, true)
           @arts << all.name
           #all.isArt = true
           #next
-        elsif all.percussion != 9 && all.percussion > 5 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+        elsif all.percussion != 9 && all.percussion > 3 && all.percussion < 6 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
           all.update_attribute(:isPer, true)
           @percussion << all.name
           #all.isPer = true
           #next
-        elsif all.crafts != 9 && all.crafts > 5 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+        elsif all.crafts != 9 && all.crafts > 3 && all.crafts < 6 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
           all.update_attribute(:isCraft, true)
           @crafts << all.name
           #all.isCraft = true
           #next
-        elsif all.games != 9 && all.games > 5 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+        elsif all.games != 9 && all.games > 3 && all.games < 6 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
           all.update_attribute(:isGame, true)
           @games << all.name
           #all.isGame = true
           #next
-        elsif all.guitars != 9 && all.guitars > 5 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+        elsif all.guitars != 9 && all.guitars > 3 && all.guitars < 6 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
           all.update_attribute(:isGuit, true)
           @guitars << all.name
           #next
           
-        elsif all.choir != 9 && all.choir > 5 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+        elsif all.choir != 9 && all.choir > 3 && all.choir < 6 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
           all.update_attribute(:isChoir, true)
           @choir << all.name
           
-        elsif all.writing != 9 && all.writing > 5 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+        elsif all.writing != 9 && all.writing > 3 && all.writing < 6 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
           all.update_attribute(:isWrite, true)
           @writing << all.name
           
-        elsif all.weaving != 9 && all.weaving > 5 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+        elsif all.weaving != 9 && all.weaving > 3 && all.weaving < 6 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
           all.update_attribute(:isWeave, true)
           @weaving << all.name
           
-        elsif all.notdance != 9 && all.notdance > 5 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+        elsif all.notdance != 9 && all.notdance > 3 && all.notdance < 6 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
           all.update_attribute(:isNotdance, true)
           @notdance << all.name
           
-        elsif all.painting != 9 && all.painting > 5 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+        elsif all.painting != 9 && all.painting > 3 && all.painting < 6 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
           all.update_attribute(:isPaint, true)
           @painting << all.name
           
-        elsif all.sign != 9 && all.sign > 5 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+        elsif all.sign != 9 && all.sign > 3 && all.sign < 6 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
           all.update_attribute(:isSign, true)
           @sign << all.name
           
-        elsif all.spanish != 9 && all.spanish > 5 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+        elsif all.spanish != 9 && all.spanish > 3 && all.spanish < 6 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
           all.update_attribute(:isSpan, true)
           @spanish << all.name
           
-        elsif all.talking != 9 && all.talking > 5 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+        elsif all.talking != 9 && all.talking > 3 && all.talking < 6 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
           all.update_attribute(:isTalk, true)
           @talking << all.name
           
@@ -2507,106 +2482,106 @@ class CampersController < ApplicationController
           
           # This next section will use the camper's optional activities if they could not get assigned on one of their main activities
           
-        elsif all.archery != 9 && all.archery > 5 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+        elsif all.archery != 9 && all.archery > 3 && all.archery < 6 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
           all.update_attribute(:isArch, true)
           @archery << all.name
           #all.isArch = true
           #next
           # instead of next, do else if so that the end of the thing can be used
-        elsif all.riflery != 9 && all.riflery > 5 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+        elsif all.riflery != 9 && all.riflery > 3 && all.riflery < 6 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
           all.update_attribute(:isRif, true)
           @riflery << all.name
           #all.isRif = true
           #next
-        elsif all.canoeing != 9 && all.canoeing > 5 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+        elsif all.canoeing != 9 && all.canoeing > 3 && all.canoeing < 6 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
           all.update_attribute(:isCan, true)
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking > 3 && all.baking < 6 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 3 && all.camping < 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks > 3 && all.rocks < 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
           #next
-        elsif all.fishing != 9 && all.fishing > 5 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+        elsif all.fishing != 9 && all.fishing > 3 && all.fishing < 6 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
           all.update_attribute(:isFish, true)
           @fishing << all.name
           #all.isFish = true
           #next
-        elsif all.hiking != 9 && all.hiking > 5 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+        elsif all.hiking != 9 && all.hiking > 3 && all.hiking < 6 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
           all.update_attribute(:isHike, true)
           @hiking << all.name
           #all.isHike = true
           #next
-        elsif all.pottery != 9 && all.pottery > 5 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+        elsif all.pottery != 9 && all.pottery > 3 && all.pottery < 6 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
           all.update_attribute(:isPot, true)
           @pottery << all.name
           #all.isPot = true
           #next
-        elsif all.arts != 9 && all.arts > 5 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+        elsif all.arts != 9 && all.arts > 3 && all.arts < 6 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
           all.update_attribute(:isArt, true)
           @arts << all.name
           #all.isArt = true
           #next
-        elsif all.percussion != 9 && all.percussion > 5 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+        elsif all.percussion != 9 && all.percussion > 3 && all.percussion < 6 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
           all.update_attribute(:isPer, true)
           @percussion << all.name
           #all.isPer = true
           #next
-        elsif all.crafts != 9 && all.crafts > 5 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+        elsif all.crafts != 9 && all.crafts > 3 && all.crafts < 6 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
           all.update_attribute(:isCraft, true)
           @crafts << all.name
           #all.isCraft = true
           #next
-        elsif all.games != 9 && all.games > 5 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+        elsif all.games != 9 && all.games > 3 && all.games < 6 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
           all.update_attribute(:isGame, true)
           @games << all.name
           #all.isGame = true
           #next
-        elsif all.guitars != 9 && all.guitars > 5 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+        elsif all.guitars != 9 && all.guitars > 3 && all.guitars < 6 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
           all.update_attribute(:isGuit, true)
           @guitars << all.name
           #next
           
-        elsif all.choir != 9 && all.choir > 5 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+        elsif all.choir != 9 && all.choir > 3 && all.choir < 6 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
           all.update_attribute(:isChoir, true)
           @choir << all.name
           
-        elsif all.writing != 9 && all.writing > 5 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+        elsif all.writing != 9 && all.writing > 3 && all.writing < 6 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
           all.update_attribute(:isWrite, true)
           @writing << all.name
           
-        elsif all.weaving != 9 && all.weaving > 5 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+        elsif all.weaving != 9 && all.weaving > 3 && all.weaving < 6 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
           all.update_attribute(:isWeave, true)
           @weaving << all.name
           
-        elsif all.notdance != 9 && all.notdance > 5 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+        elsif all.notdance != 9 && all.notdance > 3 && all.notdance < 6 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
           all.update_attribute(:isNotdance, true)
           @notdance << all.name
           
-        elsif all.painting != 9 && all.painting > 5 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+        elsif all.painting != 9 && all.painting > 3 && all.painting < 6 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
           all.update_attribute(:isPaint, true)
           @painting << all.name
           
-        elsif all.sign != 9 && all.sign > 5 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+        elsif all.sign != 9 && all.sign > 3 && all.sign < 6 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
           all.update_attribute(:isSign, true)
           @sign << all.name
           
-        elsif all.spanish != 9 && all.spanish > 5 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+        elsif all.spanish != 9 && all.spanish > 3 && all.spanish < 6 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
           all.update_attribute(:isSpan, true)
           @spanish << all.name
           
-        elsif all.talking != 9 && all.talking > 5 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+        elsif all.talking != 9 && all.talking > 3 && all.talking < 6 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
           all.update_attribute(:isTalk, true)
           @talking << all.name
           
@@ -2728,106 +2703,106 @@ class CampersController < ApplicationController
         
           # This next section will use the camper's optional activities if they could not get assigned on one of their main activities
           
-        elsif all.archery != 9 && all.archery > 5 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+        elsif all.archery != 9 && all.archery > 3 && all.archery < 6 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
           all.update_attribute(:isArch, true)
           @archery << all.name
           #all.isArch = true
           #next
           # instead of next, do else if so that the end of the thing can be used
-        elsif all.riflery != 9 && all.riflery > 5 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+        elsif all.riflery != 9 && all.riflery > 3 && all.riflery < 6 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
           all.update_attribute(:isRif, true)
           @riflery << all.name
           #all.isRif = true
           #next
-        elsif all.canoeing != 9 && all.canoeing > 5 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+        elsif all.canoeing != 9 && all.canoeing > 3 && all.canoeing < 6 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
           all.update_attribute(:isCan, true)
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking > 3 && all.baking < 6 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 3 && all.camping < 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks > 3 && all.rocks < 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
           #next
-        elsif all.fishing != 9 && all.fishing > 5 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+        elsif all.fishing != 9 && all.fishing > 3 && all.fishing < 6 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
           all.update_attribute(:isFish, true)
           @fishing << all.name
           #all.isFish = true
           #next
-        elsif all.hiking != 9 && all.hiking > 5 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+        elsif all.hiking != 9 && all.hiking > 3 && all.hiking < 6 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
           all.update_attribute(:isHike, true)
           @hiking << all.name
           #all.isHike = true
           #next
-        elsif all.pottery != 9 && all.pottery > 5 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+        elsif all.pottery != 9 && all.pottery > 3 && all.pottery < 6 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
           all.update_attribute(:isPot, true)
           @pottery << all.name
           #all.isPot = true
           #next
-        elsif all.arts != 9 && all.arts > 5 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+        elsif all.arts != 9 && all.arts > 3 && all.arts < 6 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
           all.update_attribute(:isArt, true)
           @arts << all.name
           #all.isArt = true
           #next
-        elsif all.percussion != 9 && all.percussion > 5 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+        elsif all.percussion != 9 && all.percussion > 3 && all.percussion < 6 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
           all.update_attribute(:isPer, true)
           @percussion << all.name
           #all.isPer = true
           #next
-        elsif all.crafts != 9 && all.crafts > 5 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+        elsif all.crafts != 9 && all.crafts > 3 && all.crafts < 6 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
           all.update_attribute(:isCraft, true)
           @crafts << all.name
           #all.isCraft = true
           #next
-        elsif all.games != 9 && all.games > 5 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+        elsif all.games != 9 && all.games > 3 && all.games < 6 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
           all.update_attribute(:isGame, true)
           @games << all.name
           #all.isGame = true
           #next
-        elsif all.guitars != 9 && all.guitars > 5 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+        elsif all.guitars != 9 && all.guitars > 3 && all.guitars < 6 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
           all.update_attribute(:isGuit, true)
           @guitars << all.name
           #next
           
-        elsif all.choir != 9 && all.choir > 5 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+        elsif all.choir != 9 && all.choir > 3 && all.choir < 6 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
           all.update_attribute(:isChoir, true)
           @choir << all.name
           
-        elsif all.writing != 9 && all.writing > 5 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+        elsif all.writing != 9 && all.writing > 3 && all.writing < 6 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
           all.update_attribute(:isWrite, true)
           @writing << all.name
           
-        elsif all.weaving != 9 && all.weaving > 5 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+        elsif all.weaving != 9 && all.weaving > 3 && all.weaving < 6 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
           all.update_attribute(:isWeave, true)
           @weaving << all.name
           
-        elsif all.notdance != 9 && all.notdance > 5 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+        elsif all.notdance != 9 && all.notdance > 3 && all.notdance < 6 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
           all.update_attribute(:isNotdance, true)
           @notdance << all.name
           
-        elsif all.painting != 9 && all.painting > 5 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+        elsif all.painting != 9 && all.painting > 3 && all.painting < 6 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
           all.update_attribute(:isPaint, true)
           @painting << all.name
           
-        elsif all.sign != 9 && all.sign > 5 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+        elsif all.sign != 9 && all.sign > 3 && all.sign < 6 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
           all.update_attribute(:isSign, true)
           @sign << all.name
           
-        elsif all.spanish != 9 && all.spanish > 5 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+        elsif all.spanish != 9 && all.spanish > 3 && all.spanish < 6 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
           all.update_attribute(:isSpan, true)
           @spanish << all.name
           
-        elsif all.talking != 9 && all.talking > 5 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+        elsif all.talking != 9 && all.talking > 3 && all.talking < 6 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
           all.update_attribute(:isTalk, true)
           @talking << all.name
           
@@ -2949,106 +2924,106 @@ class CampersController < ApplicationController
         
           # This next section will use the camper's optional activities if they could not get assigned on one of their main activities
           
-        elsif all.archery != 9 && all.archery > 5 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
+        elsif all.archery != 9 && all.archery <= 6 && !all.isArch && @archery.size < 16 && params[:activities][:archery] == "1"
           all.update_attribute(:isArch, true)
           @archery << all.name
           #all.isArch = true
           #next
           # instead of next, do else if so that the end of the thing can be used
-        elsif all.riflery != 9 && all.riflery > 5 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
+        elsif all.riflery != 9 && all.riflery <= 6 && !all.isRif && @riflery.size < 16 && params[:activities][:riflery] == "1"
           all.update_attribute(:isRif, true)
           @riflery << all.name
           #all.isRif = true
           #next
-        elsif all.canoeing != 9 && all.canoeing > 5 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
+        elsif all.canoeing != 9 && all.canoeing <= 6 && !all.isCan && @canoeing.size < 16 && params[:activities][:canoeing] == "1"
           all.update_attribute(:isCan, true)
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking <= 6 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks <= 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
           #next
-        elsif all.fishing != 9 && all.fishing > 5 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
+        elsif all.fishing != 9 && all.fishing <= 6 && !all.isFish && @fishing.size < 10 && params[:activities][:fishing] == "1"
           all.update_attribute(:isFish, true)
           @fishing << all.name
           #all.isFish = true
           #next
-        elsif all.hiking != 9 && all.hiking > 5 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
+        elsif all.hiking != 9 && all.hiking <= 6 && !all.isHike && @hiking.size < 90 && params[:activities][:hiking] == "1"
           all.update_attribute(:isHike, true)
           @hiking << all.name
           #all.isHike = true
           #next
-        elsif all.pottery != 9 && all.pottery > 5 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
+        elsif all.pottery != 9 && all.pottery <= 6 && !all.isPot && @pottery.size < 24 && params[:activities][:pottery] == "1"
           all.update_attribute(:isPot, true)
           @pottery << all.name
           #all.isPot = true
           #next
-        elsif all.arts != 9 && all.arts > 5 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
+        elsif all.arts != 9 && all.arts <= 6 && !all.isArt && @arts.size < 20 && params[:activities][:arts] == "1"
           all.update_attribute(:isArt, true)
           @arts << all.name
           #all.isArt = true
           #next
-        elsif all.percussion != 9 && all.percussion > 5 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
+        elsif all.percussion != 9 && all.percussion <= 6 && !all.isPer && @percussion.size < 10 && params[:activities][:percussion] == "1"
           all.update_attribute(:isPer, true)
           @percussion << all.name
           #all.isPer = true
           #next
-        elsif all.crafts != 9 && all.crafts > 5 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
+        elsif all.crafts != 9 && all.crafts <= 6 && !all.isCraft && @crafts.size < 16 && params[:activities][:crafts] == "1"
           all.update_attribute(:isCraft, true)
           @crafts << all.name
           #all.isCraft = true
           #next
-        elsif all.games != 9 && all.games > 5 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
+        elsif all.games != 9 && all.games <= 6 && !all.isGame && @games.size < 90 && params[:activities][:games] == "1"
           all.update_attribute(:isGame, true)
           @games << all.name
           #all.isGame = true
           #next
-        elsif all.guitars != 9 && all.guitars > 5 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
+        elsif all.guitars != 9 && all.guitars <= 6 && !all.isGuit && @guitars.size < 10 && params[:activities][:guitars] == "1"
           all.update_attribute(:isGuit, true)
           @guitars << all.name
           #next
           
-        elsif all.choir != 9 && all.choir > 5 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
+        elsif all.choir != 9 && all.choir <= 6 && !all.isChoir && @choir.size < 90 && params[:activities][:choir] == "1"
           all.update_attribute(:isChoir, true)
           @choir << all.name
           
-        elsif all.writing != 9 && all.writing > 5 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
+        elsif all.writing != 9 && all.writing <= 6 && !all.isWrite && @writing.size < 90 && params[:activities][:writing] == "1"
           all.update_attribute(:isWrite, true)
           @writing << all.name
           
-        elsif all.weaving != 9 && all.weaving > 5 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
+        elsif all.weaving != 9 && all.weaving <= 6 && !all.isWeave && @weaving.size < 90 && params[:activities][:weaving] == "1"
           all.update_attribute(:isWeave, true)
           @weaving << all.name
           
-        elsif all.notdance != 9 && all.notdance > 5 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
+        elsif all.notdance != 9 && all.notdance <= 6 && !all.isNotdance && @notdance.size < 90 && params[:activities][:notdance] == "1"
           all.update_attribute(:isNotdance, true)
           @notdance << all.name
           
-        elsif all.painting != 9 && all.painting > 5 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
+        elsif all.painting != 9 && all.painting <= 6 && !all.isPaint && @painting.size < 15 && params[:activities][:painting] == "1"
           all.update_attribute(:isPaint, true)
           @painting << all.name
           
-        elsif all.sign != 9 && all.sign > 5 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
+        elsif all.sign != 9 && all.sign <= 6 && !all.isSign && @sign.size < 90 && params[:activities][:sign] == "1"
           all.update_attribute(:isSign, true)
           @sign << all.name
           
-        elsif all.spanish != 9 && all.spanish > 5 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
+        elsif all.spanish != 9 && all.spanish <= 6 && !all.isSpan && @spanish.size < 90 && params[:activities][:spanish] == "1"
           all.update_attribute(:isSpan, true)
           @spanish << all.name
           
-        elsif all.talking != 9 && all.talking > 5 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
+        elsif all.talking != 9 && all.talking <= 6 && !all.isTalk && @talking.size < 90 && params[:activities][:talking] == "1"
           all.update_attribute(:isTalk, true)
           @talking << all.name
           
@@ -3281,7 +3256,7 @@ class CampersController < ApplicationController
       end  
    
    else
-     flash[:danger] = "The time slot was not 1-5, it was \"#{params[:activities][:slot]}\""
+     flash[:danger] = "The time slot was not 1-5, it was \"#{params[:activities][:slot]}.\" Please enter a number 1-5 for the time slot"
      redirect_to trial_path and return
    end
      
@@ -3311,7 +3286,8 @@ class CampersController < ApplicationController
    Un.first.update_attribute(:list, @un)
    
    if !params[:activities] || params[:activities] == "" || params[:activities] == nil
-     flash[:warning] = "Something went wrong at line 3242"
+     flash[:warning] = "Something went wrong after scheduling (at line 3289), the schedule should have been made 
+                        and should be viewable, regardless please contact Matthew at mdbuchanan0@gmail.com about this issue"
      redirect_to admin_path and return
    else
      Schedule.first.update_attribute(:slot, params[:activities][:slot])
