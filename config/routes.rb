@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   post '/trial', to: 'campers#make'
   get '/make', to: 'campers#make'
   
+  post '/doit', to: 'campers#doit'
+  get '/better', to: 'campers#better'
+  
   get '/campers/:id/assign', to: 'campers#assign', as: 'assign_camper'
   post '/campers/:id/assign', to: 'campers#set', as: 'set_camper'
   

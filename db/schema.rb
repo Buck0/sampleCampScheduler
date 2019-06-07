@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190527205349) do
+ActiveRecord::Schema.define(version: 20190607013045) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "archeries", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "arts", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bakings", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "campers", force: :cascade do |t|
     t.string "name"
@@ -63,6 +84,142 @@ ActiveRecord::Schema.define(version: 20190527205349) do
     t.index ["name"], name: "index_campers_on_name", unique: true
   end
 
+  create_table "campings", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "canoeings", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "choirs", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "crafts", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fishings", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "guitars", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hikings", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notdances", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "paintings", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "percussions", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "potteries", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rifleries", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rocks", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer "slot", default: 0
+    t.boolean "isArch", default: true
+    t.boolean "isRif", default: true
+    t.boolean "isCan", default: true
+    t.boolean "isBake", default: true
+    t.boolean "isCamp", default: true
+    t.boolean "isRock", default: true
+    t.boolean "isFish", default: true
+    t.boolean "isHike", default: true
+    t.boolean "isPot", default: true
+    t.boolean "isArt", default: true
+    t.boolean "isPer", default: true
+    t.boolean "isCraft", default: true
+    t.boolean "isGame", default: true
+    t.boolean "isGuit", default: true
+    t.boolean "isChoir", default: true
+    t.boolean "isWrite", default: true
+    t.boolean "isWeave", default: true
+    t.boolean "isNotdance", default: true
+    t.boolean "isPaint", default: true
+    t.boolean "isSign", default: true
+    t.boolean "isSpan", default: true
+    t.boolean "isTalk", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "signs", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spanishes", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "talkings", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "uns", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "userName"
     t.string "email"
@@ -71,6 +228,18 @@ ActiveRecord::Schema.define(version: 20190527205349) do
     t.string "password_digest"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+  end
+
+  create_table "weavings", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "writings", force: :cascade do |t|
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

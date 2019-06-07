@@ -1,0 +1,461 @@
+<% provide(:title, 'Schedule') %>
+
+<h1>Activities Schedule Slot <%= "#{Schedule.first.slot}" %></h1>
+
+
+<div><b>Unassigned Campers for this Slot</b></div>
+<ul class="campers">
+  <% if @un.size > 0 %>
+    <% @un.each do |un| %>
+      <li>
+        <b><%= link_to "Assign", assign_camper_path(Camper.find_by_name(un)) %></b> &nbsp; | &nbsp; 
+        <%= un %>
+      </li>
+    <% end %>
+  <% else %>
+    <%= "No unassigned campers" %>
+  <% end %>
+</ul>
+
+<br />
+<br />
+
+
+<div><b>Archery</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isArch %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @archery.each do |archery| %>
+      <li>
+        <%= archery %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(archery).archery %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Riflery</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isRif %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @riflery.each do |riflery| %>
+      <li>
+        <%= riflery %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(riflery).riflery %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Canoeing</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isCan %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @canoeing.each do |canoeing| %>
+      <li>
+        <%= canoeing %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(canoeing).canoeing %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Baking</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isBake %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @baking.each do |baking| %>
+      <li>
+        <%= baking %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(baking).baking %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Camping</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isCamp %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @camping.each do |camping| %>
+      <li>
+        <%= camping %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(camping).camping %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Rock Wall</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isRock %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @rocks.each do |rocks| %>
+      <li>
+        <%= rocks %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(rocks).rocks %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Fishing</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isFish %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @fishing.each do |fishing| %>
+      <li>
+        <%= fishing %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(fishing).fishing %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Hiking</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isHike %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @hiking.each do |hiking| %>
+      <li>
+        <%= hiking %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(hiking).hiking %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Pottery</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isPot %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @pottery.each do |pottery| %>
+      <li>
+        <%= pottery %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(pottery).pottery %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Puppets/Drama</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isArt %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @arts.each do |arts| %>
+      <li>
+        <%= arts %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(arts).arts %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Percussion</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isPer %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @percussion.each do |percussion| %>
+      <li>
+        <%= percussion %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(percussion).percussion %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Crafts</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isCraft %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @crafts.each do |crafts| %>
+      <li>
+        <%= crafts %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(crafts).crafts %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Games</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isGame %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @games.each do |games| %>
+      <li>
+        <%= games %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(games).games %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Guitars</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isGuit %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @guitars.each do |guitars| %>
+      <li>
+        <%= guitars %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(guitars).guitars %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Choir</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isChoir %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @choir.each do |choir| %>
+      <li>
+        <%= choir %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(choir).choir %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Creative Writing</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isWrite %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @writing.each do |writing| %>
+      <li>
+        <%= writing %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(writing).writing %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Finger Weaving</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isWeave %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @weaving.each do |weaving| %>
+      <li>
+        <%= weaving %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(weaving).weaving %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Interpretive Movement</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isNotdance %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @notdance.each do |notdance| %>
+      <li>
+        <%= notdance %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(notdance).notdance %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Painting</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isPaint %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @painting.each do |painting| %>
+      <li>
+        <%= painting %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(painting).painting %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Sign Language</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isSign %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @sign.each do |sign| %>
+      <li>
+        <%= sign %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(sign).sign %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Spanish</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isSpan %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @spanish.each do |spanish| %>
+      <li>
+        <%= spanish %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(spanish).spanish %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<b><hr style="color: black !important; border: solid 1px black !important"></b>
+<br />
+
+<div><b>Talking with Missionary</b></div>
+<ul class="campers">
+  <% if !Schedule.first.isTalk %>
+    <li>
+      Activity Off Today
+    </li>
+  <% else %>
+    <% @talking.each do |talking| %>
+      <li>
+        <%= talking %> &nbsp; | &nbsp; 
+        <%= Camper.find_by_name(talking).talking %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br />
+<br />

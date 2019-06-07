@@ -1,0 +1,2 @@
+class Talking < ApplicationRecord
+end

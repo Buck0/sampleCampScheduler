@@ -1,0 +1,2 @@
+class Weaving < ApplicationRecord
+end

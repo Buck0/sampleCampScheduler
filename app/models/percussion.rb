@@ -1,0 +1,2 @@
+class Percussion < ApplicationRecord
+end

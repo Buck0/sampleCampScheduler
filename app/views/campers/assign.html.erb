@@ -100,7 +100,7 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:assign, url: set_camper_path(@camper)) do |f| %>
       
-      <% if @isArch != "1" %>
+      <% if !@isArch %>
         <% if @isArch == nil %>
           <%= "Its nil" %>
         <% end %>
@@ -115,7 +115,7 @@
       
       <hr />
 
-      <% if @isRif != "1" %>
+      <% if !@isRif %>
         <%= "Riflery is off today" %>
       <% elsif @riflery.size < 16 %>
         <%= f.label :riflery, :class => "checkbox inline" do  %>
@@ -127,7 +127,7 @@
       
       <hr />
 
-      <% if @isCan != "1" %>
+      <% if !@isCan %>
         <%= "Canoeing is off today" %>
       <% elsif @canoeing.size < 16 %>
         <%= f.label :canoeing, :class => "checkbox inline" do  %>
@@ -139,7 +139,7 @@
       
       <hr />
 
-      <% if @isBake != "1" %>
+      <% if !@isBake %>
         <%= "Baking is off today" %>
       <% elsif @baking.size < 10 %>
         <%= f.label :baking, :class => "checkbox inline" do  %>
@@ -151,7 +151,7 @@
       
       <hr />
 
-      <% if @isCamp != "1" %>
+      <% if !@isCamp %>
         <%= "Camping is off today" %>
       <% elsif @camping.size < 24 %>
         <%= f.label :camping, :class => "checkbox inline" do  %>
@@ -163,7 +163,7 @@
       
       <hr />
 
-      <% if @isRock != "1" %>
+      <% if !@isRock %>
         <%= "Rock Wall is off today" %>
       <% elsif @rocks.size < 12 %>
         <%= f.label :rocks, :class => "checkbox inline" do  %>
@@ -175,7 +175,7 @@
       
       <hr />
 
-      <% if @isFish != "1" %>
+      <% if !@isFish %>
         <%= "Fishing is off today" %>
       <% elsif @fishing.size < 10 %>
         <%= f.label :fishing, :class => "checkbox inline" do  %>
@@ -187,7 +187,7 @@
       
       <hr />
 
-      <% if @isHike != "1" %>
+      <% if !@isHike %>
         <%= "Hiking is off today" %>
       <% elsif @hiking.size < 90 %>
         <%= f.label :hiking, :class => "checkbox inline" do  %>
@@ -199,7 +199,7 @@
       
       <hr />
 
-      <% if @isPot != "1" %>
+      <% if !@isPot %>
         <%= "Pottery is off today" %>
       <% elsif @pottery.size < 24 %>
         <%= f.label :pottery, :class => "checkbox inline" do  %>
@@ -211,7 +211,7 @@
       
       <hr />
 
-      <% if @isArt != "1" %>
+      <% if !@isArt %>
         <%= "Puppets and Drama is off today" %>
       <% elsif @arts.size < 20 %>
         <%= f.label :puppets_and_drama, :class => "checkbox inline" do  %>
@@ -223,7 +223,7 @@
       
       <hr />
 
-      <% if @isPer != "1" %>
+      <% if !@isPer %>
         <%= "Percussion is off today" %>
       <% elsif @percussion.size < 10 %>
         <%= f.label :percussion, :class => "checkbox inline" do  %>
@@ -235,7 +235,7 @@
       
       <hr />
 
-      <% if @isCraft != "1" %>
+      <% if !@isCraft %>
         <%= "Crafts is off today" %>
       <% elsif @crafts.size < 16 %>
         <%= f.label :crafts, :class => "checkbox inline" do  %>
@@ -247,7 +247,7 @@
       
       <hr />
 
-      <% if @isGame != "1" %>
+      <% if !@isGame %>
         <%= "Games is off today" %>
       <% elsif @games.size < 90 %>
         <%= f.label :games, :class => "checkbox inline" do  %>
@@ -259,7 +259,7 @@
       
       <hr />
 
-      <% if @isGuit != "1" %>
+      <% if !@isGuit %>
         <%= "Guitars is off today" %>
       <% elsif @guitars.size < 10 %>
         <%= f.label :guitars, :class => "checkbox inline" do  %>
@@ -271,7 +271,7 @@
       
       <hr />
 
-      <% if @isChoir != "1" %>
+      <% if !@isChoir %>
         <%= "Choir is off today" %>
       <% elsif @choir.size < 90 %>
         <%= f.label :choir, :class => "checkbox inline" do  %>
@@ -283,7 +283,7 @@
       
       <hr />
 
-      <% if @isWrite != "1" %>
+      <% if !@isWrite %>
         <%= "Creative Writing is off today" %>
       <% elsif @writing.size < 90 %>
         <%= f.label :creative_writing, :class => "checkbox inline" do  %>
@@ -295,7 +295,7 @@
       
       <hr />
 
-      <% if @isWeave != "1" %>
+      <% if !@isWeave %>
         <%= "Finger Weaving is off today" %>
       <% elsif @weaving.size < 90 %>
         <%= f.label :finger_weaving, :class => "checkbox inline" do  %>
@@ -307,7 +307,7 @@
       
       <hr />
 
-      <% if @isNotdance != "1" %>
+      <% if !@isNotdance %>
         <%= "Interpretive Movement is off today" %>
       <% elsif @notdance.size < 90 %>
         <%= f.label :interpretive_movement, :class => "checkbox inline" do  %>
@@ -319,7 +319,7 @@
       
       <hr />
 
-      <% if @isPaint != "1" %>
+      <% if !@isPaint %>
         <%= "Painting is off today" %>
       <% elsif @painting.size < 15 %>
         <%= f.label :painting, :class => "checkbox inline" do  %>
@@ -331,7 +331,7 @@
       
       <hr />
 
-      <% if @isSign != "1" %>
+      <% if !@isSign %>
         <%= "Sign Language is off today" %>
       <% elsif @sign.size < 90 %>
         <%= f.label :sign_language, :class => "checkbox inline" do  %>
@@ -343,7 +343,7 @@
       
       <hr />
 
-      <% if @isSpan != "1" %>
+      <% if !@isSpan %>
         <%= "Spanish is off today" %>
       <% elsif @spanish.size < 90 %>
         <%= f.label :spanish, :class => "checkbox inline" do  %>
@@ -355,7 +355,7 @@
       
       <hr />
 
-      <% if @isTalk != "1" %>
+      <% if !@isTalk %>
         <%= "Talking with Missionary is off today" %>
       <% elsif @talking.size < 90 %>
         <%= f.label :talking_with_missionary, :class => "checkbox inline" do  %>

@@ -1,0 +1,2 @@
+class Archery < ApplicationRecord
+end

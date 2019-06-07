@@ -1,0 +1,2 @@
+class Spanish < ApplicationRecord
+end

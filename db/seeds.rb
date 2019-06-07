@@ -7,6 +7,33 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #Camper.create!(name:    "Empty Slot"  )
 
+Archery.create!
+Riflery.create!
+Canoeing.create!
+Baking.create!
+Camping.create!
+Rock.create!
+Fishing.create!
+Hiking.create!
+Pottery.create!
+Art.create!
+Percussion.create!
+Craft.create!
+Game.create!
+Guitar.create!
+Choir.create!
+Writing.create!
+Weaving.create!
+Notdance.create!
+Painting.create!
+Sign.create!
+Spanish.create!
+Talking.create!
+Un.create!
+
+Schedule.create!
+
+
 99.times do |n|
   num = (n % 7) + 1
   num2 = ((num + 1) % 7) + 1
@@ -25,3 +52,4 @@
                  percussion: num6,
                  hiking:     num7)
 end
+
