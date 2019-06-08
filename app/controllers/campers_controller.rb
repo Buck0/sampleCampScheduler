@@ -3359,11 +3359,11 @@ class CampersController < ApplicationController
      if params[:activities][:talking] != "1"
        Schedule.first.update_attribute(:isTalk, false)
      end
-    end
+   end
     flash[:success] = "Schedule created"
     redirect_to better_path
    
- end
+  end
   
   private
 
