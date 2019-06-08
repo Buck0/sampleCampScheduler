@@ -1,6 +1,8 @@
 <% provide(:title, 'All Campers') %>
 <h1>All Campers</h1>
 
+<h2>Total number of campers: <%= "#{@all.size}" %></h2>
+
 <%= will_paginate %>
 <ul class="campers">
   <% @campers.each do |camper| %>

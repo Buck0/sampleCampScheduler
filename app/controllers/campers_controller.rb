@@ -2005,6 +2005,7 @@ class CampersController < ApplicationController
       redirect_to login_path
       flash[:danger] = 'Please Login to use Admin Functions'
     end
+    @all = Camper.all
     @campers = Camper.reorder("name ASC").paginate(per_page: 10, page: params[:page])
   end
   
