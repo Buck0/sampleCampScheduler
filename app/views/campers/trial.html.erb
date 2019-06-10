@@ -5,6 +5,9 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:activities, url: '/doit') do |f| %>
+    
+    <div>Please select all of the activities that are going to be on for the next schedule</div>
+    <br />
 
       <%= f.label :archery, :class => "checkbox inline" do %>
       <%= f.check_box :archery %>Archery
@@ -131,6 +134,9 @@
       <% end %>
       
       <hr />
+      
+      <div>Please enter the current time slot's number here (a number 1-5)</div>
+    <br />
 
       <%= f.label :time_slot %>
       <%= f.number_field :slot, in: 1..5, class: 'form-control' %>

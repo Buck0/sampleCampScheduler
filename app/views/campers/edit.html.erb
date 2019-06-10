@@ -10,7 +10,8 @@
       <%= f.text_field :name, class: 'form-control' %>
       
       <br />
-      <!---<div>Please enter 1-7 based on the camptivities desired by the camper</div>--->
+      <div>For the following, please enter 1-7 based on the camptivities desired by the camper</div>
+      <div>The number 9 means the camper did not choose that activity and the number 8 will be ignored by the scheduler</div>
 
       <%= f.label :archery %>
       <%= f.number_field :archery, in: 1..9, class: 'form-control' %>
