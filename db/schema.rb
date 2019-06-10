@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190607013045) do
+ActiveRecord::Schema.define(version: 20190609024723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,6 +152,34 @@ ActiveRecord::Schema.define(version: 20190607013045) do
 
   create_table "potteries", force: :cascade do |t|
     t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reassigns", force: :cascade do |t|
+    t.integer "campID", default: 0
+    t.boolean "archery", default: false
+    t.boolean "riflery", default: false
+    t.boolean "canoeing", default: false
+    t.boolean "baking", default: false
+    t.boolean "camping", default: false
+    t.boolean "rocks", default: false
+    t.boolean "fishing", default: false
+    t.boolean "hiking", default: false
+    t.boolean "pottery", default: false
+    t.boolean "arts", default: false
+    t.boolean "percussion", default: false
+    t.boolean "crafts", default: false
+    t.boolean "games", default: false
+    t.boolean "guitars", default: false
+    t.boolean "choir", default: false
+    t.boolean "writing", default: false
+    t.boolean "weaving", default: false
+    t.boolean "notdance", default: false
+    t.boolean "painting", default: false
+    t.boolean "sign", default: false
+    t.boolean "spanish", default: false
+    t.boolean "talking", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

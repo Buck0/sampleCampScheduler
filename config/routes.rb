@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   get '/campers/:id/assign', to: 'campers#assign', as: 'assign_camper'
   post '/campers/:id/assign', to: 'campers#set', as: 'set_camper'
   
+  get '/campers/:id/reassign', to: 'campers#reassign', as: 'reassign'
+  post '/campers/:id/reassign', to: 'campers#again', as: 'again'
+  
   #get '/assign', to: 'campers#assign'
   
   root 'sessions#new'

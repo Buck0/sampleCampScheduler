@@ -1,0 +1,2 @@
+class Reassign < ApplicationRecord
+end
