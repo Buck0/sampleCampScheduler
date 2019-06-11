@@ -339,7 +339,7 @@ class CampersController < ApplicationController
     else
       flash[:warning] = "No activity was selected, please select an activity"
       render '/assign'
-    end
+   end
  end
  
  def reset
@@ -353,14 +353,14 @@ class CampersController < ApplicationController
                             
    end
    
-   flash[:success] = "The schedule has been successfully reset"
+   flash[:success] = "The entire schedule has been successfully reset"
    redirect_to admin_path
  end
  
  def disintigrate
    Camper.delete_all
    if Camper.any?
-     flash[:warning] = "Something went wrong please try again"
+     flash[:danger] = "Something went wrong, some campers did not get deleted, please try again"
    else
     flash[:success] = "The list of campers has been deleted"
    end
@@ -9165,6 +9165,147 @@ class CampersController < ApplicationController
       flash[:danger] = "The camper was not found in any of the activity lists, please contact Matthew at mdbuchanan0@gmail.com about this error"
     end
     
+  end
+  
+  def rescind
+    
+   @archery = Archery.first.list
+   @riflery = Riflery.first.list
+   @canoeing = Canoeing.first.list
+   @baking = Baking.first.list
+   @camping = Camping.first.list
+   @rocks = Rock.first.list
+   @fishing = Fishing.first.list
+   @hiking = Hiking.first.list
+   @pottery = Pottery.first.list
+   @arts = Art.first.list
+   @percussion = Percussion.first.list
+   @crafts = Craft.first.list
+   @games = Game.first.list
+   @guitars = Guitar.first.list
+   @un = Un.first.list
+    
+   @choir = Choir.first.list
+   @writing = Writing.first.list
+   @weaving = Weaving.first.list
+   @notdance = Notdance.first.list
+   @painting = Painting.first.list
+   @sign = Sign.first.list
+   @spanish = Spanish.first.list
+   @talking = Talking.first.list
+   
+   @archery.each do |name|
+     Camper.find_by_name(name).update_attribute(:isArch, false)
+   end
+   
+   @riflery.each do |name|
+     Camper.find_by_name(name).update_attribute(:isRif, false)
+   end
+   
+   @canoeing.each do |name|
+     Camper.find_by_name(name).update_attribute(:isCan, false)
+   end
+   
+   @baking.each do |name|
+     Camper.find_by_name(name).update_attribute(:isBake, false)
+   end
+   
+   @camping.each do |name|
+     Camper.find_by_name(name).update_attribute(:isCamp, false)
+   end
+   
+   @rocks.each do |name|
+     Camper.find_by_name(name).update_attribute(:isRock, false)
+   end
+   
+   @fishing.each do |name|
+     Camper.find_by_name(name).update_attribute(:isFish, false)
+   end
+   
+   @hiking.each do |name|
+     Camper.find_by_name(name).update_attribute(:isHike, false)
+   end
+   
+   @pottery.each do |name|
+     Camper.find_by_name(name).update_attribute(:isPot, false)
+   end
+   
+   @arts.each do |name|
+     Camper.find_by_name(name).update_attribute(:isArt, false)
+   end
+   
+   @percussion.each do |name|
+     Camper.find_by_name(name).update_attribute(:isPer, false)
+   end
+   
+   @games.each do |name|
+     Camper.find_by_name(name).update_attribute(:isGame, false)
+   end
+   
+   @guitars.each do |name|
+     Camper.find_by_name(name).update_attribute(:isGuit, false)
+   end
+   
+   @choir.each do |name|
+     Camper.find_by_name(name).update_attribute(:isChoir, false)
+   end
+   
+   @writing.each do |name|
+     Camper.find_by_name(name).update_attribute(:isWrite, false)
+   end
+   
+   @weaving.each do |name|
+     Camper.find_by_name(name).update_attribute(:isWeave, false)
+   end
+   
+   @notdance.each do |name|
+     Camper.find_by_name(name).update_attribute(:isNotdance, false)
+   end
+   
+   @painting.each do |name|
+     Camper.find_by_name(name).update_attribute(:isPaint, false)
+   end
+   
+   @sign.each do |name|
+     Camper.find_by_name(name).update_attribute(:isSign, false)
+   end
+   
+   @spanish.each do |name|
+     Camper.find_by_name(name).update_attribute(:isSpan, false)
+   end
+   
+   @talking.each do |name|
+     Camper.find_by_name(name).update_attribute(:isTalk, false)
+   end
+   
+   Archery.first.update_attribute(:list, [])
+   Riflery.first.update_attribute(:list, [])
+   Canoeing.first.update_attribute(:list, [])
+   Baking.first.update_attribute(:list, [])
+   Camping.first.update_attribute(:list, [])
+   Rock.first.update_attribute(:list, [])
+   Fishing.first.update_attribute(:list, [])
+   Hiking.first.update_attribute(:list, [])
+   Pottery.first.update_attribute(:list, [])
+   Art.first.update_attribute(:list, [])
+   Percussion.first.update_attribute(:list, [])
+   Game.first.update_attribute(:list, [])
+   Guitar.first.update_attribute(:list, [])
+   
+   Choir.first.update_attribute(:list, [])
+   Writing.first.update_attribute(:list, [])
+   Weaving.first.update_attribute(:list, [])
+   Notdance.first.update_attribute(:list, [])
+   Painting.first.update_attribute(:list, [])
+   Sign.first.update_attribute(:list, [])
+   Spanish.first.update_attribute(:list, [])
+   Talking.first.update_attribute(:list, [])
+   
+   Un.first.update_attribute(:list, [])
+   
+   flash[:success] = "Today's schedule has successfully been reset"
+   redirect_to admin_path
+   
   end
   
   private

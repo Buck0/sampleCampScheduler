@@ -6,7 +6,8 @@
         <li><%= link_to "Home",   admin_path %></li>
         <li><%= link_to "Help",   help_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "Campers", campers_all_path %></li>
+          <li><%= link_to "Add Camper", campers_path %></li>
+          <li><%= link_to "View Campers", campers_all_path %></li>
           <li><%= link_to "View Schedule", better_path %></li>
           <li><%= link_to "Create Schedule", trial_path %></li>
           <li class="dropdown">
