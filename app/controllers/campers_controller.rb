@@ -9308,6 +9308,11 @@ class CampersController < ApplicationController
    
   end
   
+  def toggle
+    Link.first.update_attribute(:on, !Link.first.on)
+    redirect_to better_path
+  end
+  
   private
 
     def camper_params

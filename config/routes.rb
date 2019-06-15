@@ -41,6 +41,8 @@ Rails.application.routes.draw do
   
   delete '/rescind', to: 'campers#rescind'
   
+  post '/toggle', to: 'campers#toggle'
+  
   #get '/assign', to: 'campers#assign'
   
   root 'sessions#new'

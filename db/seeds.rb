@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #Camper.create!(name:    "Empty Slot"  )
 
+=begin
 Archery.create!
 Riflery.create!
 Canoeing.create!
@@ -32,6 +33,9 @@ Talking.create!
 Un.create!
 
 Schedule.create!
+=end
+
+Link.create!
 
 =begin
 99.times do |n|

@@ -2,6 +2,21 @@
 
 <h1>Activities Schedule Slot <%= "#{Schedule.first.slot}" %></h1>
 
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:links, url: '/toggle') do |f| %>
+    
+    <% if Link.first.on %>
+      <%= f.submit "Toggle Reassign Links Off", class: "btn btn-primary" %>
+    <% else %>
+      <%= f.submit "Toggle Reassign Links On", class: "btn btn-primary" %>
+    <% end %>
+    
+    <% end %>
+  </div>
+</div>
+
+<br />
 
 <div><b>Unassigned Campers for this Slot</b></div>
 <ul class="campers">
@@ -30,7 +45,7 @@
   <% else %>
     <% @archery.each do |archery| %>
       <li>
-        <% if @archery.size < 5 %>
+        <% if @archery.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(archery)) %> &nbsp; | &nbsp; 
         <% end %>
           <%= archery %> &nbsp; | &nbsp; 
@@ -53,7 +68,7 @@
   <% else %>
     <% @riflery.each do |riflery| %>
       <li>
-        <% if @riflery.size < 5 %>
+        <% if @riflery.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(riflery)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= riflery %> &nbsp; | &nbsp; 
@@ -76,7 +91,7 @@
   <% else %>
     <% @canoeing.each do |canoeing| %>
       <li>
-        <% if @canoeing.size < 5 %>
+        <% if @canoeing.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(canoeing)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= canoeing %> &nbsp; | &nbsp; 
@@ -99,7 +114,7 @@
   <% else %>
     <% @baking.each do |baking| %>
       <li>
-        <% if @baking.size < 5 %>
+        <% if @baking.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(baking)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= baking %> &nbsp; | &nbsp; 
@@ -122,7 +137,7 @@
   <% else %>
     <% @camping.each do |camping| %>
       <li>
-        <% if @camping.size < 5 %>
+        <% if @camping.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(camping)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= camping %> &nbsp; | &nbsp; 
@@ -145,7 +160,7 @@
   <% else %>
     <% @rocks.each do |rocks| %>
       <li>
-        <% if @rocks.size < 5 %>
+        <% if @rocks.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(rocks)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= rocks %> &nbsp; | &nbsp; 
@@ -168,7 +183,7 @@
   <% else %>
     <% @fishing.each do |fishing| %>
       <li>
-        <% if @fishing.size < 3 %>
+        <% if @fishing.size < 3 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(fishing)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= fishing %> &nbsp; | &nbsp; 
@@ -191,7 +206,7 @@
   <% else %>
     <% @hiking.each do |hiking| %>
       <li>
-        <% if @hiking.size < 5 %>
+        <% if @hiking.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(hiking)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= hiking %> &nbsp; | &nbsp; 
@@ -214,7 +229,7 @@
   <% else %>
     <% @pottery.each do |pottery| %>
       <li>
-        <% if @pottery.size < 5 %>
+        <% if @pottery.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(pottery)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= pottery %> &nbsp; | &nbsp; 
@@ -237,7 +252,7 @@
   <% else %>
     <% @arts.each do |arts| %>
       <li>
-        <% if @arts.size < 5 %>
+        <% if @arts.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(arts)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= arts %> &nbsp; | &nbsp; 
@@ -260,7 +275,7 @@
   <% else %>
     <% @percussion.each do |percussion| %>
       <li>
-        <% if @percussion.size < 5 %>
+        <% if @percussion.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(percussion)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= percussion %> &nbsp; | &nbsp; 
@@ -283,7 +298,7 @@
   <% else %>
     <% @games.each do |games| %>
       <li>
-        <% if @games.size < 5 %>
+        <% if @games.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(games)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= games %> &nbsp; | &nbsp; 
@@ -306,7 +321,7 @@
   <% else %>
     <% @guitars.each do |guitars| %>
       <li>
-        <% if @guitars.size < 3 %>
+        <% if @guitars.size < 3 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(guitars)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= guitars %> &nbsp; | &nbsp; 
@@ -329,7 +344,7 @@
   <% else %>
     <% @choir.each do |choir| %>
       <li>
-        <% if @choir.size < 5 %>
+        <% if @choir.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(choir)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= choir %> &nbsp; | &nbsp; 
@@ -352,7 +367,7 @@
   <% else %>
     <% @writing.each do |writing| %>
       <li>
-        <% if @writing.size < 3 %>
+        <% if @writing.size < 3 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(writing)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= writing %> &nbsp; | &nbsp; 
@@ -375,7 +390,7 @@
   <% else %>
     <% @weaving.each do |weaving| %>
       <li>
-        <% if @weaving.size < 3 %>
+        <% if @weaving.size < 3 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(weaving)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= weaving %> &nbsp; | &nbsp; 
@@ -398,7 +413,7 @@
   <% else %>
     <% @notdance.each do |notdance| %>
       <li>
-        <% if @notdance.size < 5 %>
+        <% if @notdance.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(notdance)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= notdance %> &nbsp; | &nbsp; 
@@ -421,7 +436,7 @@
   <% else %>
     <% @painting.each do |painting| %>
       <li>
-        <% if @painting.size < 5 %>
+        <% if @painting.size < 5 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(painting)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= painting %> &nbsp; | &nbsp; 
@@ -444,7 +459,7 @@
   <% else %>
     <% @sign.each do |sign| %>
       <li>
-        <% if @sign.size < 3 %>
+        <% if @sign.size < 3 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(sign)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= sign %> &nbsp; | &nbsp; 
@@ -467,7 +482,7 @@
   <% else %>
     <% @spanish.each do |spanish| %>
       <li>
-        <% if @spanish.size < 3 %>
+        <% if @spanish.size < 3 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(spanish)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= spanish %> &nbsp; | &nbsp; 
@@ -490,7 +505,7 @@
   <% else %>
     <% @talking.each do |talking| %>
       <li>
-        <% if @talking.size < 2 %>
+        <% if @talking.size < 2 || Link.first.on %>
           <%= link_to "Reassign?", reassign_path(Camper.find_by_name(talking)) %> &nbsp; | &nbsp; 
         <% end %>
         <%= talking %> &nbsp; | &nbsp; 
