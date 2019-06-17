@@ -2173,7 +2173,7 @@ class CampersController < ApplicationController
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 15 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
@@ -2183,7 +2183,7 @@ class CampersController < ApplicationController
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks <= i && all.grade > 4 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
@@ -2278,7 +2278,7 @@ class CampersController < ApplicationController
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking > 3 && all.baking < 6 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking > 3 && all.baking < 6 && !all.isBake && @baking.size < 15 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
@@ -2288,7 +2288,7 @@ class CampersController < ApplicationController
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks > 3 && all.rocks < 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks > 3 && all.grade > 4 && all.rocks < 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
@@ -2394,7 +2394,7 @@ class CampersController < ApplicationController
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 15 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
@@ -2404,7 +2404,7 @@ class CampersController < ApplicationController
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks <= i && all.grade > 4 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
@@ -2499,7 +2499,7 @@ class CampersController < ApplicationController
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking > 3 && all.baking < 6 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking > 3 && all.baking < 6 && !all.isBake && @baking.size < 15 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
@@ -2509,7 +2509,7 @@ class CampersController < ApplicationController
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks > 3 && all.rocks < 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks > 3 && all.grade > 4 && all.rocks < 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
@@ -2615,7 +2615,7 @@ class CampersController < ApplicationController
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 15 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
@@ -2625,7 +2625,7 @@ class CampersController < ApplicationController
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks <= i && all.grade > 4 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
@@ -2720,7 +2720,7 @@ class CampersController < ApplicationController
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking > 3 && all.baking < 6 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking > 3 && all.baking < 6 && !all.isBake && @baking.size < 15 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
@@ -2730,7 +2730,7 @@ class CampersController < ApplicationController
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks > 3 && all.rocks < 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks > 3 && all.grade > 4 && all.rocks < 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
@@ -2836,7 +2836,7 @@ class CampersController < ApplicationController
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 15 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
@@ -2846,7 +2846,7 @@ class CampersController < ApplicationController
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks <= i && all.grade > 4 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
@@ -2941,7 +2941,7 @@ class CampersController < ApplicationController
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking <= 6 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking <= 6 && !all.isBake && @baking.size < 15 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
@@ -2951,7 +2951,7 @@ class CampersController < ApplicationController
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks <= 6 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks <= 6 && all.grade > 4 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
@@ -3057,7 +3057,7 @@ class CampersController < ApplicationController
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking <= i && !all.isBake && @baking.size < 15 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
@@ -3067,7 +3067,7 @@ class CampersController < ApplicationController
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks <= i && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks <= i && all.grade > 4 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
@@ -3162,7 +3162,7 @@ class CampersController < ApplicationController
           @canoeing << all.name
           #all.isCan = true
           #next
-        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 10 && params[:activities][:baking] == "1"
+        elsif all.baking != 9 && all.baking > 5 && !all.isBake && @baking.size < 15 && params[:activities][:baking] == "1"
           all.update_attribute(:isBake, true)
           @baking << all.name
           #all.isBake = true
@@ -3172,7 +3172,7 @@ class CampersController < ApplicationController
           @camping << all.name
           #all.isCamp = true
           #next
-        elsif all.rocks != 9 && all.rocks > 5 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
+        elsif all.rocks != 9 && all.rocks > 5 && all.grade > 4 && !all.isRock && @rocks.size < 12 && params[:activities][:rocks] == "1"
           all.update_attribute(:isRock, true)
           @rocks << all.name
           #all.isRock = true
@@ -9311,6 +9311,16 @@ class CampersController < ApplicationController
   def toggle
     Link.first.update_attribute(:on, !Link.first.on)
     redirect_to better_path
+  end
+  
+  def best
+    # here is where the newest and (hopefully) best scheduler implementation will go
+    # it will run through each individual camper looking for their first activity choice
+    # if found it will assign them to that activity and them remove them from the list that's 
+    # being searched through; at the end of that "pass" it will then search through the remaining
+    # campers for their second activity choice; it will continue doing this until either there are no 
+    # more campers to go through or the last number has been reached; if any campers still remain
+    # they will be sent to the unassigned list for manual scheduling
   end
   
   private

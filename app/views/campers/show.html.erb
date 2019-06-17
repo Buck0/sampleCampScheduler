@@ -1,6 +1,10 @@
 <% provide(:title, "View Camper ##{@camper.id}") %>
 <h1><%= @camper.name %>'s Activities</h1>
 
+<h3>Grade: <%= @camper.grade %></h3>
+
+<br />
+
 <% if @camper.archery != nil && @camper.archery != "" && @camper.archery != 9 %>
 <h3><%= @camper.archery %> &nbsp; &nbsp;&nbsp;&nbsp;Archery</h3>
 <% end %>
@@ -22,7 +26,7 @@
 <% end %>
 
 <% if @camper.rocks != nil && @camper.rocks != "" && @camper.rocks != 9 %>
-<h3><%= @camper.rocks %> &nbsp; &nbsp;&nbsp;&nbsp;Rocks</h3>
+<h3><%= @camper.rocks %> &nbsp; &nbsp;&nbsp;&nbsp;Rock Wall</h3>
 <% end %>
 
 <% if @camper.fishing != nil && @camper.fishing != "" && @camper.fishing != 9 %>

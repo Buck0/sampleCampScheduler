@@ -149,7 +149,7 @@
 
       <% if !@isBake %>
         <%= "Baking is off today" %>
-      <% elsif @baking.size < 10 %>
+      <% elsif @baking.size < 15 %>
         <% if @camper.isBake %>
           <%= @camper.name %> has already had Baking
         <% else %>
@@ -184,6 +184,8 @@
       <% elsif @rocks.size < 12 %>
         <% if @camper.isRock %>
           <%= @camper.name %> has already had Rock Wall
+        <% elsif @camper.grade < 5 %>
+          <%= @camper.name %> is in grade <%= @camper.grade %>, and is too young for Rock Wall
         <% else %>
           <%= f.label :rocks, :class => "checkbox inline" do  %>
           <%= f.check_box :rocks %>Rock Wall
