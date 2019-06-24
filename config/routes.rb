@@ -43,6 +43,10 @@ Rails.application.routes.draw do
   
   post '/toggle', to: 'campers#toggle'
   
+  get '/mini_camp', to: 'campers#minimake', as: 'minimake'
+  
+  post '/mini', to: 'campers#mini'
+  
   #get '/assign', to: 'campers#assign'
   
   root 'sessions#new'

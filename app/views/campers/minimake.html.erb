@@ -1,0 +1,147 @@
+<!--- form with radio buttons or check boxes that toggle on and off the activities for today --->
+<% provide(:title, 'Create Mini Schedule') %>
+<h1>Create Schedule for Mini Camp</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:activities, url: '/mini') do |f| %>
+    
+    <div>Please select all of the activities that are going to be on for the next schedule for mini camp</div>
+    <br />
+
+      <%= f.label :archery, :class => "checkbox inline" do %>
+      <%= f.check_box :archery %>Archery
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :riflery, :class => "checkbox inline" do  %>
+      <%= f.check_box :riflery %>Riflery
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :canoeing, :class => "checkbox inline" do  %>
+      <%= f.check_box :canoeing %>Canoeing
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :baking, :class => "checkbox inline" do  %>
+      <%= f.check_box :baking %>Baking
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :camping, :class => "checkbox inline" do  %>
+      <%= f.check_box :camping %>Camping
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :rocks, :class => "checkbox inline" do  %>
+      <%= f.check_box :rocks %>Rock Wall
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :fishing, :class => "checkbox inline" do  %>
+      <%= f.check_box :fishing %>Fishing
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :hiking, :class => "checkbox inline" do  %>
+      <%= f.check_box :hiking %>Hiking
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :pottery, :class => "checkbox inline" do  %>
+      <%= f.check_box :pottery %>Pottery
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :puppets_and_drama, :class => "checkbox inline" do  %>
+      <%= f.check_box :arts %>Puppets/Drama
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :percussion, :class => "checkbox inline" do  %>
+      <%= f.check_box :percussion %>Percussion
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :games, :class => "checkbox inline" do  %>
+      <%= f.check_box :games %>Games
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :guitars, :class => "checkbox inline" do  %>
+      <%= f.check_box :guitars %>Guitars
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :choir, :class => "checkbox inline" do  %>
+      <%= f.check_box :choir %>Choir
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :creative_writing, :class => "checkbox inline" do  %>
+      <%= f.check_box :writing %>Creative Writing
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :finger_weaving, :class => "checkbox inline" do  %>
+      <%= f.check_box :weaving %>Finger Weaving
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :interpretive_movement, :class => "checkbox inline" do  %>
+      <%= f.check_box :notdance %>Interpretive Movement
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :painting, :class => "checkbox inline" do  %>
+      <%= f.check_box :painting %>Painting
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :sign_language, :class => "checkbox inline" do  %>
+      <%= f.check_box :sign %>Sign Language
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :spanish, :class => "checkbox inline" do  %>
+      <%= f.check_box :spanish %>Spanish
+      <% end %>
+      
+      <hr />
+
+      <%= f.label :talking_with_missionary, :class => "checkbox inline" do  %>
+      <%= f.check_box :talking %>Talking with Missionary
+      <% end %>
+      
+      <hr />
+      
+      <div>Please enter the current time slot's number here (a number 1-5)</div>
+    <br />
+
+      <%= f.label :time_slot %>
+      <%= f.number_field :slot, in: 1..5, class: 'form-control' %>
+
+      <%= f.submit "Create Mini Schedule", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
