@@ -2178,7 +2178,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= i && all.grade > 4  && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -2283,7 +2283,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 3 && all.camping < 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 3 && all.grade > 4  && all.camping < 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -2399,7 +2399,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= i && all.grade > 4  && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -2504,7 +2504,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 3 && all.camping < 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 3 && all.grade > 4  && all.camping < 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -2620,7 +2620,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= i && all.grade > 4  && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -2725,7 +2725,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 3 && all.camping < 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 3 && all.grade > 4  && all.camping < 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -2841,7 +2841,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= i && all.grade > 4  && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -2946,7 +2946,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= 6 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= 6 && all.grade > 4  && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -3062,7 +3062,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= i && all.grade > 4  && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -3167,7 +3167,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 5 && all.grade > 4  && !all.isCamp && @camping.size < 24 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -9430,7 +9430,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= i && all.grade > 4 && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -9535,7 +9535,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 3 && all.camping < 6 && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 3 && all.grade > 4  && all.camping < 6 && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -9651,7 +9651,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= i && all.grade > 4  && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -9756,7 +9756,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 3 && all.camping < 6 && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 3 && all.grade > 4  && all.camping < 6 && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -9872,7 +9872,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= i && all.grade > 4  && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -9977,7 +9977,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 3 && all.camping < 6 && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 3 && all.grade > 4  && all.camping < 6 && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -10093,7 +10093,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= i && all.grade > 4  && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -10198,7 +10198,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= 6 && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= 6 && all.grade > 4  && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -10314,7 +10314,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping <= i && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping <= i && all.grade > 4  && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -10419,7 +10419,7 @@ class CampersController < ApplicationController
           @baking << all.name
           #all.isBake = true
           #next
-        elsif all.camping != 9 && all.camping > 5 && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
+        elsif all.camping != 9 && all.camping > 5 && all.grade > 4  && !all.isCamp && @camping.size < 12 && params[:activities][:camping] == "1"
           all.update_attribute(:isCamp, true)
           @camping << all.name
           #all.isCamp = true
@@ -10615,6 +10615,269 @@ class CampersController < ApplicationController
     flash[:success] = "Schedule created"
     redirect_to better_path
    
+  end
+  
+  def camptivities
+    @all = Camper.all
+    
+    @archery = 0
+    @riflery = 0
+    @canoeing = 0
+    @baking = 0
+    @camping = 0
+    @rocks = 0
+    @fishing = 0
+    @hiking = 0
+    @pottery = 0
+    @arts = 0
+    @percussion = 0
+    @games = 0
+    @guitars = 0
+    @choir = 0 
+    @writing = 0
+    @weaving = 0
+    @notdance = 0
+    @painting = 0
+    @sign = 0
+    @spanish = 0
+    @talking = 0
+    
+    @arch = 0
+    @rif = 0
+    @can = 0
+    @bake = 0
+    @camp = 0
+    @rock = 0
+    @fish = 0
+    @hike = 0
+    @pot = 0
+    @art = 0
+    @per = 0
+    @game = 0
+    @guit = 0
+    @chr = 0
+    @write = 0
+    @weave = 0
+    @notd = 0
+    @paint = 0
+    @signing = 0
+    @span = 0
+    @talk = 0
+    
+    @atArch = 0
+    @atRif = 0
+    @atCan = 0
+    @atBake = 0
+    @atCamp = 0
+    @atRock = 0
+    @atFish = 0
+    @atHike = 0
+    @atPot = 0
+    @atArt = 0
+    @atPer = 0
+    @atGame = 0
+    @atGuit = 0
+    @atChr = 0
+    @atWrite = 0
+    @atWeave = 0
+    @atNotd = 0
+    @atPaint = 0
+    @atSigning = 0
+    @atSpan = 0
+    @atTalk = 0
+    
+    @all.each do |all|
+      if all.archery < 6
+        @archery = @archery + 1
+      elsif all.archery >= 6 && all.archery != 9
+        @arch = @arch + 1
+      end
+      if all.isArch
+        @atArch = @atArch + 1
+      end
+      
+      if all.riflery < 6
+        @riflery = @riflery + 1
+      elsif all.riflery >= 6 && all.riflery != 9
+        @rif = @rif + 1
+      end
+      if all.isRif
+        @atRif = @atRif + 1
+      end
+      
+      if all.canoeing < 6
+        @canoeing = @canoeing + 1
+      elsif all.canoeing >= 6 && all.canoeing !=9
+        @can = @can + 1
+      end
+      if all.isCan
+        @atCan = @atCan + 1
+      end
+      
+      if all.baking < 6
+        @baking = @baking + 1
+      elsif all.baking >= 6 && all.baking != 9
+        @bake = @bake + 1
+      end
+      if all.isBake
+        @atBake = @atBake + 1
+      end
+      
+      if all.camping < 6 && all.grade > 4
+        @camping = @camping + 1
+      elsif all.camping >= 6 && all.camping != 9 && all.grade > 4
+        @camp = @camp + 1
+      end
+      if all.isCamp
+        @atCamp = @atCamp + 1
+      end
+      
+      if all.rocks < 6 && all.grade > 4
+        @rocks = @rocks + 1
+      elsif all.rocks >= 6 && all.rocks != 9 && all.grade > 4
+        @rock = @rock + 1
+      end
+      if all.isRock
+        @atRock = @atRock + 1
+      end
+      
+      if all.fishing < 6
+        @fishing = @fishing + 1
+      elsif all.fishing >= 6 && all.fishing != 9
+        @fish = @fish + 1
+      end
+      if all.isFish
+        @atFish = @atFish + 1
+      end
+      
+      if all.hiking < 6
+        @hiking = @hiking + 1
+      elsif all.hiking >= 6 && all.hiking != 9
+        @hike = @hike + 1
+      end
+      if all.isHike
+        @atHike = @atHike + 1
+      end
+      
+      if all.pottery < 6
+        @pottery = @pottery + 1
+      elsif all.pottery >= 6 && all.pottery != 9
+        @pot = @pot + 1
+      end
+      if all.isPot
+        @atPot = @atPot + 1
+      end
+      
+      if all.arts < 6
+        @arts = @arts + 1
+      elsif all.arts >= 6 && all.arts != 9
+        @art = @art + 1
+      end
+      if all.isArt
+        @atArt = @atArt + 1
+      end
+      
+      if all.percussion < 6
+        @percussion = @percussion + 1
+      elsif all.percussion >= 6 && all.percussion != 9
+        @per = @per + 1
+      end
+      if all.isPer
+        @atPer = @atPer + 1
+      end
+      
+      if all.games < 6
+        @games = @games + 1
+      elsif all.games >= 6 && all.games != 9
+        @game = @game + 1
+      end
+      if all.isGame
+        @atGame = @atGame + 1
+      end
+      
+      if all.guitars < 6
+        @guitars = @guitars + 1
+      elsif all.guitars >= 6 && all.guitars != 9
+        @guit = @guit + 1
+      end
+      if all.isGuit
+        @atGuit = @atGuit + 1
+      end
+      
+      if all.choir < 6
+        @choir = @choir + 1
+      elsif all.choir >= 6 && all.choir != 9
+        @chr = @chr + 1
+      end
+      if all.isChoir
+        @atChr = @atChr + 1
+      end
+      
+      if all.writing < 6
+        @writing = @writing + 1
+      elsif all.writing >= 6 && all.writing != 9
+        @write = @write + 1
+      end
+      if all.isWrite
+        @atWrite = @atWrite + 1
+      end
+      
+      if all.weaving < 6
+        @weaving = @weaving + 1
+      elsif all.weaving >= 6 && all.weaving != 9
+        @weave = @weave + 1
+      end
+      if all.isWeave
+        @atWeave = @atWeave + 1
+      end
+      
+      if all.notdance < 6
+        @notdance = @notdance + 1
+      elsif all.notdance >= 6 && all.notdance != 9
+        @notd = @notd + 1
+      end
+      if all.isNotdance
+        @atNotd = @atNotd + 1
+      end
+      
+      if all.painting < 6
+        @painting = @painting + 1
+      elsif all.painting >= 6 && all.painting != 9
+        @paint = @paint + 1
+      end
+      if all.isPaint
+        @atPaint = @atPaint + 1
+      end
+      
+      if all.sign < 6
+        @sign = @sign + 1
+      elsif all.sign >= 6 && all.sign != 9
+        @signing = @signing + 1
+      end
+      if all.isSign
+        @atSigning = @atSigning + 1
+      end
+      
+      if all.spanish < 6
+        @spanish = @spanish + 1
+      elsif all.spanish >= 6 && all.spanish != 9
+        @span = @span + 1
+      end
+      if all.isSpan
+        @atSpan = @atSpan + 1
+      end
+      
+      if all.talking < 6
+        @talking = @talking + 1
+      elsif all.talking >= 6 && all.talking != 9
+        @talk = @talk + 1
+      end
+      if all.isTalk
+        @atTalk = @atTalk + 1
+      end
+      
+    end
+        
   end
   
   private

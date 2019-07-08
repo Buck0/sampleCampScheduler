@@ -47,6 +47,8 @@ Rails.application.routes.draw do
   
   post '/mini', to: 'campers#mini'
   
+  get '/camptivities', to: 'campers#camptivities'
+  
   #get '/assign', to: 'campers#assign'
   
   root 'sessions#new'

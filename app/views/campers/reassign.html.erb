@@ -172,6 +172,8 @@
       <% elsif @camping.size < 24 %>
         <% if @camper.isCamp %>
           <%= @camper.name %> has already had Camping
+        <% elsif @camper.grade < 5 %>
+          <%= @camper.name %> is in grade <%= @camper.grade %>, and is too young for Camp Out
         <% else %>
           <%= f.label :camping, :class => "checkbox inline" do  %>
           <%= f.check_box :camping %>Camping

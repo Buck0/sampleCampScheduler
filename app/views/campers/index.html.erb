@@ -3,6 +3,10 @@
 
 <h2>Total number of campers: <%= "#{@all.size}" %></h2>
 
+<div class="center">
+  <%= link_to "Totals for Camptivities", camptivities_path, class: "btn btn-primary" %>
+</div>
+
 <%= will_paginate %>
 <ul class="campers">
   <% @campers.each do |camper| %>
