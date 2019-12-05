@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application was made for CSCI 498 Senoir Project Construction. It is a people scheduler application for Camp La Vida.
 
-Things you may want to cover:
+* The app has a database of campers that are assigned to camp activities on a daily basis.
 
-* Ruby version
+* Each camp activity can be turned off and on for each day before making the schedule.
 
-* System dependencies
+* Once the schedule is made, campers can be reassigned if need be.
 
-* Configuration
+* Each camper will only be allowed to visit any activity once a week.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* This app is deployed using heroku at this URL: https://camp-scheduler-15493.herokuapp.com/
