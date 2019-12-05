@@ -2,6 +2,8 @@
 
 This application was made for CSCI 498 Senoir Project Construction. It is a people scheduler application for Camp La Vida.
 
+* The application was built using Ruby on Rails.
+
 * The app has a database of campers that are assigned to camp activities on a daily basis.
 
 * Each camp activity can be turned off and on for each day before making the schedule.
