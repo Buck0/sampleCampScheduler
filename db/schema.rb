@@ -10,6 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+# As of 3/29/20 3:57PM I added a new camptivities table and changed the campers table to hopefully allow the changes I want
+
+# camptivities has name, limit, grade, and list[]; name is camptivity name, limit is the max kids in the activity,
+# => grade decides the cutoff for what grades are allowed to participate in the camptivity and is defaulted to 0 so that
+# => all grades can participate, and list[] is the list of kids in that camptivity slot for "today's" schedule
+
+# campers has first, last, and full -Name, preference[], visited[], and grade; first, last, and full -Name are
+# => their respective names, preference[] is their preference for each respective camptivity, visited[] is whether
+# => they have visited a respective camptivity, and grade is their grade
+
+# schedules and reassigns tables need to be reworked as well to reflect changes
+
+# all old tables can be deleted after testing of new system
+
 ActiveRecord::Schema.define(version: 20190617041140) do
 
   # These are extensions that must be enabled in order to support this database
@@ -33,7 +47,29 @@ ActiveRecord::Schema.define(version: 20190617041140) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "camptivities", force: :cascade do |t|
+    t.string "name"
+    t.integer "limit", default: 1
+    t.integer "grade", default: 0
+    t.text "list", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_camptivities_on_name", unique: true
+  end
+
   create_table "campers", force: :cascade do |t|
+    t.string "firstName"
+    t.string "lastName"
+    t.string "fullName"
+    t.integer "preference", default: [], array: true
+    t.boolean "visited", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "grade", default: 1
+    t.index ["fullName"], name: "index_campers_on_name", unique: true
+  end
+
+=begin   create_table "campers", force: :cascade do |t|
     t.string "name"
     t.integer "archery", default: 9
     t.boolean "isArch", default: false
@@ -84,6 +120,7 @@ ActiveRecord::Schema.define(version: 20190617041140) do
     t.integer "grade", default: 1
     t.index ["name"], name: "index_campers_on_name", unique: true
   end
+=end
 
   create_table "campings", force: :cascade do |t|
     t.text "list", default: [], array: true
