@@ -12,4 +12,4 @@ This application was made for CSCI 498 Senoir Project Construction. It is a peop
 
 * Each camper will only be allowed to visit any activity once a week.
 
-* This app is deployed using heroku at this URL: https://camp-scheduler-15493.herokuapp.com/
+* This app is deployed using heroku at this URL: https://ancient-beach-67189.herokuapp.com/
